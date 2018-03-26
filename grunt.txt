@@ -2,6 +2,6 @@ npm install -g grunt-cli
 
 npm init
 
-npm install --save-dev grunt grunt-contrib-concat grunt-contrib-uglify grunt-contrib-watch grunt-contrib-connect grunt-contrib-clean grunt-contrib-copy grunt-contrib-cssmin
+npm install --save-dev grunt grunt-contrib-concat grunt-contrib-uglify grunt-contrib-watch grunt-contrib-connect grunt-contrib-clean grunt-contrib-copy grunt-contrib-cssmin grunt-contrib-jshint grunt-contrib-sass grunt-autoprefixer
 
-npm install --save-dev jquery jquery-form jquery-validation jquery.cookie requirejs bootstrap clipboard font-awesome iscroll sweetalert swiper
+npm install --save-dev jquery jquery-form jquery-validation jquery.cookie requirejs bootstrap clipboard font-awesome iscroll sweetalert swiper normalize.css
