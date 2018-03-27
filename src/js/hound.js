@@ -2,22 +2,27 @@
  * Hound v2.0.1
  * Created by LiuSong on 2017/3/14.
  * requires: jQuery 3+
- *           jQuery Validation Plugin
- *           jQuery Form Plugin
+ *           jQuery Validation
+ *           jQuery Form
  *           jQuery Cookie
- *           Swiper
+ *           Bootstrap-bundle
  *           SweetAlert
+ *           JSON2
+ *           Swiper (mobile)
+ *           IScroll-probe (mobile)
+ *           RequireJS
+ *           pullLoad (mobile)
  */
 
-define("hound", [], function () {
+define("hound", [], function() {
 
     var config = {
-            version: "2.0",
+            version: "2.0.1",
             debug: false,
             dataType: "json",
             timeout: 45000, //ajax请求超时时间:ms
             delay: 1500, //消息提醒后延迟跳转:ms
-            mobile: /^1(3[0-9]|[458][0-35-9]|7[0678])\d{8}$/,
+            mobile: /^(13[0-9]|14[579]|15[0-3,5-9]|16[6]|17[0135678]|18[0-9]|19[89])\d{8}$/,
             messages: {
                 loading: "加载中……",
                 timeout: "请求超时",
@@ -25,73 +30,86 @@ define("hound", [], function () {
                 mobile: "请输入一个有效的手机号码"
             }
         },
-        hound = function () {
+        hound = function() {
             $.extend(this, config);
         };
 
     $.extend(hound.prototype, {
-        isBlank: function (obj) {
+        isBlank: function(obj) {
             return(!obj || $.trim(obj) === "");
         },
-        //SweetAlert2
-        swal: sweetAlert,
-        //hound sweet alert
-        hsa: function (title, text, type, timer, ok) {
-            if ($.isFunction(timer)) {
-                ok = timer;
-                timer = null;
-            }
-            this.swal({
-                type: type,
+        swal: function(title, text, icon, timer) {
+            swal({
                 title: title,
                 text: text,
-                timer: $.isNumeric(timer) ? parseInt(timer) : null
-            }).then(function () {
-                if ($.isFunction(ok)) {
-                    ok();
+                icon: icon,
+                timer: timer,
+                buttons: {
+                    confirm: {
+                        text: '确定'
+                    }
                 }
-            }, function () {});
+            });
         },
-        alert: function (title, text, timer) {
-            //this.swal(title, text, "warning");
-            this.hsa(title, text, "warning", timer);
+        alert: function(title, text, timer) {
+            this.swal(title, text, 'warning', timer);
         },
-        success: function (title, text, timer) {
-            this.hsa(title, text, "success", timer);
+        success: function(title, text, timer) {
+            this.swal(title, text, 'success', timer);
         },
-        error: function (title, text, timer) {
-            //this.swal(title, text, "error");
-            this.hsa(title, text, "error", timer);
+        error: function(title, text, timer) {
+            this.swal(title, text, 'error', timer);
         },
-        info: function (title, text, timer) {
-            //this.swal(title, text, "info");
-            this.hsa(title, text, "info", timer);
+        info: function(title, text, timer) {
+            this.swal(title, text, 'info', timer);
         },
-        loading: function (xhr) {
-            var _this = this;
-            _this.swal({
+        confirm: function(title, text, confirm) {
+            swal({
+                title: title,
+                text: text,
+                type: "question",
+                buttons: {
+                    cancel: {
+                        text: '取消',
+                        visible: true
+                    },
+                    confirm: {
+                        text: '确认'
+                    }
+                },
+                closeOnClickOutside: false
+            }).then(function(result) {
+                if (result) {
+                    confirm();
+                }
+            });
+        },
+        loading: function(xhr) {
+            var _this = this,
+                loading = document.createElement("i");
+            loading.className = 'fa fa-circle-o-notch fa-spin fa-4x';
+
+            swal({
                 title: _this.messages.loading,
-                html: '<i class="fa fa-circle-o-notch fa-spin fa-4x"></i>', //Required Font Awesome
-                showConfirmButton: false,
-                allowOutsideClick: false,
-                allowEscapeKey: false,
-                allowEnterKey: false,
+                content: loading,
+                buttons: false,
+                closeOnClickOutside: false,
+                closeOnEsc: false,
                 timer: _this.timeout
             }).then(
-                function () {},
-                function (dismiss) {
-                    if (dismiss === 'timer' && xhr) {
+                function() {
+                    if (xhr) {
                         xhr.abort();
                         _this.error(_this.messages.timeout);
                     }
                 }
             );
         },
-        redirect: function (url, delay) {
+        redirect: function(url, delay) {
             if (this.isBlank(url)) return;
 
             delay = $.isNumeric(delay) ? delay : 0;
-            setTimeout(function () {
+            setTimeout(function() {
                 switch (url) {
                     //case null:
                     //case undefined:
@@ -122,15 +140,15 @@ define("hound", [], function () {
                 }
             }, delay);
         },
-        ajax: function (type, url, data, fn) {
+        ajax: function(type, url, data, fn) {
             var _this = this;
             return $.ajax({
                 type: type,
                 url: url,
                 data: data,
                 cache: false,
-                success: function (json) {
-                    _this.swal.close();
+                success: function(json) {
+                    swal.close();
                     switch (json.code) {
                         case 200:
                             if ($.isFunction(fn)) {
@@ -150,57 +168,57 @@ define("hound", [], function () {
                             break;
                     }
                 },
-                error: function () {
+                error: function() {
                     _this.error(_this.messages.fail);
                 },
                 dataType: _this.dataType
             });
         },
-        post: function (url, data, fn) {
+        post: function(url, data, fn) {
             var _this = this,
                 xhr = _this.ajax("POST", url, data, fn);
 
             _this.loading(xhr);
         },
-        get: function (url, data, fn) {
+        get: function(url, data, fn) {
             var _this = this,
                 xhr = _this.ajax("GET", url, data, fn);
 
             _this.loading(xhr);
         },
-        getHTML: function (url, data, fn) {
+        getHTML: function(url, data, fn) {
             var _this = this;
             return $.ajax({
                 url: url,
                 data: data,
-                success: function (html) {
+                success: function(html) {
                     if ($.isFunction(fn)) {
                         fn(html);
                     }
                 },
-                error: function () {
+                error: function() {
                     _this.error(_this.messages.fail);
                 },
                 dataType: "html"
             });
         },
-        loadHTML: function ($e, url, data, fn) {
+        loadHTML: function($e, url, data, fn) {
             var _this = this;
 
             if ($.isFunction(data)) {
                 fn = data;
                 data = {};
             }
-            _this.getHTML(url, data, function (html) {
+            _this.getHTML(url, data, function(html) {
                 $e.html(html);
                 if ($.isFunction(fn)) {
                     fn($e);
                 }
             });
         },
-        getRequest: function () {
+        getRequest: function() {
             var request = {};
-            $.each(location.search.substr(1).split("&"), function (i, n) {
+            $.each(location.search.substr(1).split("&"), function(i, n) {
                 var index = n.indexOf("=");
                 if (index != -1) { //忽略无效参数
                     request[n.substring(0, index)] = decodeURIComponent(n.substr(index + 1));
@@ -208,7 +226,7 @@ define("hound", [], function () {
             });
             return request;
         },
-        fireEvent: function (node, eventName) {
+        fireEvent: function(node, eventName) {
             // Make sure we use the ownerDocument from the provided node to avoid cross-window problems
             var doc,
                 event;
@@ -269,7 +287,7 @@ define("hound", [], function () {
     //common events
     var events = {
         'click': {
-            post: function (element, event) {
+            post: function(element, event) {
                 event.preventDefault();
 
                 var $this = $(element),
@@ -278,7 +296,7 @@ define("hound", [], function () {
 
                 $.hound.post(url, data);
             },
-            toggle: function (element, event) {
+            toggle: function(element, event) {
                 event.preventDefault();
 
                 var $this = $(element),
@@ -286,11 +304,11 @@ define("hound", [], function () {
                     url = $this.data("url") || $target.data("url"),
                     data = $.extend({}, $target.data("data"));
 
-                $.hound.post(url, data, function () {
+                $.hound.post(url, data, function() {
                     $this.toggleClass("toggled");
                 });
             },
-            remove: function (element, event) {
+            remove: function(element, event) {
                 event.preventDefault();
 
                 var $this = $(element),
@@ -299,8 +317,8 @@ define("hound", [], function () {
                     url = $this.data("url") || $target.parent().data("removeUrl"),
                     data = $.extend({}, $this.data("data"));
 
-                $.hound.post(url, data, function () {
-                    $target.fadeOut("fast", function () {
+                $.hound.post(url, data, function() {
+                    $target.fadeOut("fast", function() {
                         if (siblings == 0 && $target.parent().data("redirect")) {
                             $.hound.redirect($this.parent().data("redirect"));
                         } else {
@@ -309,7 +327,7 @@ define("hound", [], function () {
                     });
                 });
             },
-            redirect: function (element, event) {
+            redirect: function(element, event) {
                 event.preventDefault();
 
                 var url = $(element).data("url");
@@ -328,22 +346,22 @@ define("hound", [], function () {
 
                 $.hound.redirect(url);
             },
-            ajaxSubmit: function (element, event) {
+            ajaxSubmit: function(element, event) {
                 event.preventDefault();
 
                 var $this = $(element).closest("form"),
                     validate = !!$this.data("validate");
 
                 $this.ajaxSubmit({
-                    beforeSubmit: function () {//arr, $form, options
+                    beforeSubmit: function() {//arr, $form, options
                         return validate ? $this.valid() : true;
                     },
                     //resetForm: true,
                     dataType: "json",
-                    error: function () {//xhr, statusText, error, $form
+                    error: function() {//xhr, statusText, error, $form
                         $.hound.error($.hound.messages.fail);
                     },
-                    success: function (responseText) {//responseText, statusText, xhr, $form
+                    success: function(responseText) {//responseText, statusText, xhr, $form
                         switch (responseText.code) {
                             case 200:
                                 $this.resetForm();
@@ -364,7 +382,7 @@ define("hound", [], function () {
                     }
                 });
             },
-            sendCode: function (element, event) {
+            sendCode: function(element, event) {
                 event.preventDefault();
 
                 var $this = $(element),
@@ -379,10 +397,10 @@ define("hound", [], function () {
 
                 if ($.hound.mobile.test($target.val())) {
                     data[$target.prop("name")] = $target.val();
-                    $.hound.post(url, data, function () {
+                    $.hound.post(url, data, function() {
                         $this.data("waiting", true);
                         var second = 60;
-                        var interval = setInterval(function () {
+                        var interval = setInterval(function() {
                             if (second == 0) {
                                 clearInterval(interval);
                                 $this.data("waiting", false);
@@ -397,7 +415,7 @@ define("hound", [], function () {
                     $.hound.alert($.hound.messages.mobile);
                 }
             },
-            refreshCode: function (element, event) {
+            refreshCode: function(element, event) {
                 event.preventDefault();
 
                 var $this = $(element),
@@ -411,43 +429,35 @@ define("hound", [], function () {
         }
     };
 
-    $(document).ready(function () {
+    $(document).ready(function() {
         //bind events
-        $.each(events, function (event, methods) {
-            $.each(methods, function (method, handle) {
-                $(document).on(event, '[data-' + event + '="' + method + '"]', function (event) {
+        $.each(events, function(event, methods) {
+            $.each(methods, function(method, handle) {
+                $(document).on(event, '[data-' + event + '="' + method + '"]', function(event) {
                     var element = this,
                         confirm = $(this).data("confirm");
 
-                    if (undefined === confirm || 0 === confirm.length) {
+                    if ($.isBlank(confirm)) {
                         handle(element, event);
                     } else {
-                        $.hound.swal({
-                            title: confirm,
-                            type: "question",
-                            showCancelButton: true,
-                            allowOutsideClick: false /* 修复部分浏览器嵌套点击 */
-                        }).then(
-                            function () {
-                                handle(element, event);
-                            },
-                            function () {}
-                        );
+                        $.hound.confirm(confirm, '', function() {
+                            handle(element, event);
+                        });
                     }
                 });
             });
         });
 
         //element load a url
-        $('[data-load]').each(function () {
+        $('[data-load]').each(function() {
             var $this = $(this);
             $.hound.loadHTML($this, $this.data("load"), $.extend({}, $this.data("data")));
         });
 
         //form validate
-        $('form[data-validate="true"]').each(function () {
+        $('form[data-validate="true"]').each(function() {
             var $this = $(this);
-            this.onreset = function () {
+            this.onreset = function() {
                 $this.find('.has-feedback').removeClass('has-error has-feedback has-success');
                 $this.find('.form-control-feedback, .help-block').remove();
             };
@@ -464,13 +474,13 @@ define("hound", [], function () {
         //onkeyup: false,
         //onclick: false,
         //onsubmit: true,
-        errorPlacement: function (error, $input) {
+        errorPlacement: function(error, $input) {
             var $formGroup = $input.closest('.form-group');
             $formGroup.find('.form-control-feedback, .help-block').remove();
             $input.filter(':visible').after('<span class="fa fa-remove form-control-feedback" aria-hidden="true"></span>');
             $formGroup.append(error);
         },
-        highlight: function (element) {
+        highlight: function(element) {
             $(element).closest('.form-group').addClass('has-error has-feedback');
         },
         unhighlight: function(element) {
@@ -478,7 +488,7 @@ define("hound", [], function () {
             $input.closest('.form-group').removeClass('has-error has-feedback');
             $input.next('.form-control-feedback').remove();
         },
-        success: function ($label) {
+        success: function($label) {
             var $formGroup = $label.closest('.form-group').removeClass('has-error').addClass("has-feedback has-success"),
                 $input = $formGroup.find("input, textarea");
             $formGroup.find('.form-control-feedback, .help-block').remove();
@@ -486,7 +496,7 @@ define("hound", [], function () {
             $label.remove();
         }
     });
-    $.validator.addMethod("mobile", function (value, element) {
+    $.validator.addMethod("mobile", function(value, element) {
         return this.optional(element) || $.hound.mobile.test(value);
     }, $.hound.messages.mobile);
     $.extend($.validator.messages, {
@@ -509,21 +519,14 @@ define("hound", [], function () {
         min: $.validator.format( "请输入不小于 {0} 的数值" )
     });
 
-    //sweetAlert Settings
-    sweetAlert.setDefaults({
-        confirmButtonText: '确认',
-        cancelButtonText: "取消",
-        width: $.hound.isBlank(window.document.documentElement.style.fontSize) ? "500px" : "5rem"
-    });
-
-
-    return new hound();
+    return $.hound;
 });
 
 /**
- *
+ * Vali Admin BootStrap4 Template
+ * init function
  */
-(function () {
+(function() {
     "use strict";
 
     var treeviewMenu = $('.app-menu');

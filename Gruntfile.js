@@ -74,7 +74,10 @@ module.exports = function(grunt) {
                             'dist/js/hound.mobile.js'
                         ]
                     }
-                ]
+                ],
+                options: {
+                    preserveComments: false
+                }
             }
         },
         sass: {
@@ -118,6 +121,9 @@ module.exports = function(grunt) {
                     'dist/css/hound.mobile.min.css': [
                         'dist/css/hound.mobile.css'
                     ]
+                },
+                options: {
+                    preserveComments: false
                 }
             }
         },
@@ -204,7 +210,7 @@ module.exports = function(grunt) {
         'autoprefixer:dist',
         'concat:dist',
         'cssmin:dist',
-        'uglify'
+        'uglify:dist'
     ]);
 
     // Default task(s).
