@@ -5,3 +5,18 @@ npm init
 npm install --save-dev grunt grunt-contrib-concat grunt-contrib-uglify grunt-contrib-watch grunt-contrib-connect grunt-contrib-clean grunt-contrib-copy grunt-contrib-cssmin grunt-contrib-jshint grunt-contrib-sass grunt-autoprefixer
 
 npm install --save-dev jquery jquery-form jquery-validation jquery.cookie requirejs bootstrap clipboard font-awesome iscroll sweetalert swiper normalize.css
+
+
+----------------------------------------------------------------
+标准
+    js: [jquery, jquery-form, jquery-validation, jquery.cookie, bootstrap.bundle, sweetalert, json2, requirejs, hound]
+    css: [vali-admin, font-awesome, hound]
+mobile
+    js: [jquery, jquery-form, jquery-validation, jquery.cookie, bootstrap.bundle, sweetalert, json2, swiper, iscroll-probe, requirejs, pullload, hound]
+    css: [vali-admin, font-awesome, swiper, hound.mobile]
+
+
+----------------------------------------------------------------
+现有项目：http://591nt.go-trip.com.cn/vanvany/qiangxun
+
+原型地址：http://demo.go-trip.com.cn/pd

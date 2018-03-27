@@ -15,19 +15,52 @@ module.exports = function(grunt) {
                 }]
             }
         },
+        jshint: {
+            dist: [
+                'src/js/*.js',
+                '!src/js/json2.js',
+            ]
+        },
         concat: {
             dist: {
-                src: [
-                    'node_modules/swiper/dist/js/swiper.min.js',
-                    'node_modules/sweetalert/dist/sweetalert.min.js',
-                    'node_modules/jquery/dist/jquery.min.js',
-                    'node_modules/jquery-form/dist/jquery.form.min.js',
-                    'node_modules/jquery-validation/dist/jquery.validate.min.js',
-                    'node_modules/jquery.cookie/jquery.cookie.js',
-                    'node_modules/requirejs/require.js',
-                    'src/js/hound.js'
-                ],
-                dest: 'dist/js/hound.js'
+                files: {
+                    'dist/js/hound.js': [
+                        'node_modules/jquery/dist/jquery.min.js',
+                        'node_modules/jquery-form/dist/jquery.form.min.js',
+                        'node_modules/jquery-validation/dist/jquery.validate.min.js',
+                        'node_modules/jquery.cookie/jquery.cookie.js',
+                        'node_modules/bootstrap/dist/js/bootstrap.bundle.js',
+                        'node_modules/sweetalert/dist/sweetalert.min.js',
+                        'src/js/json2.js',
+                        'node_modules/requirejs/require.js',
+                        'src/js/hound.js'
+                    ],
+                    'dist/js/hound.mobile.js': [
+                        'node_modules/jquery/dist/jquery.min.js',
+                        'node_modules/jquery-form/dist/jquery.form.min.js',
+                        'node_modules/jquery-validation/dist/jquery.validate.min.js',
+                        'node_modules/jquery.cookie/jquery.cookie.js',
+                        'node_modules/bootstrap/dist/js/bootstrap.bundle.js',
+                        'node_modules/sweetalert/dist/sweetalert.min.js',
+                        'src/js/json2.js',
+                        'node_modules/swiper/dist/js/swiper.min.js',
+                        'node_modules/iscroll/build/iscroll-probe.js',
+                        'node_modules/requirejs/require.js',
+                        'src/js/pullLoad.js',
+                        'src/js/hound.js'
+                    ],
+                    'dist/css/hound.css': [
+                        'node_modules/vali-admin/docs/css/main.css',
+                        'node_modules/font-awesome/css/font-awesome.css',
+                        'src/css/hound.css'
+                    ],
+                    'dist/css/hound.mobile.css': [
+                        'node_modules/vali-admin/docs/css/main.css',
+                        'node_modules/font-awesome/css/font-awesome.css',
+                        'node_modules/swiper/dist/css/swiper.min.css',
+                        'src/css/hound.css'
+                    ]
+                }
             }
         },
         uglify: {
@@ -36,6 +69,9 @@ module.exports = function(grunt) {
                     {
                         'dist/js/hound.min.js': [
                             'dist/js/hound.js'
+                        ],
+                        'dist/js/hound.mobile.min.js': [
+                            'dist/js/hound.mobile.js'
                         ]
                     }
                 ]
@@ -77,9 +113,10 @@ module.exports = function(grunt) {
             dist: {
                 files: {
                     'dist/css/hound.min.css': [
-                        'node_modules/normalize.css/normalize.css',
-                        'node_modules/swiper/dist/css/swiper.min.css',
                         'dist/css/hound.css'
+                    ],
+                    'dist/css/hound.mobile.min.css': [
+                        'dist/css/hound.mobile.css'
                     ]
                 }
             }
@@ -90,11 +127,10 @@ module.exports = function(grunt) {
                     {
                         expand: true,
                         dot: true,
-                        cwd: 'src',
-                        dest: 'dist',
+                        cwd: 'node_modules/font-awesome/fonts',
+                        dest: 'dist/fonts',
                         src: [
-                            '**/*.{html,js,css}',
-                            '**/*.{png,jpg,gif}'
+                            '*'
                         ]
                     }
                 ]
@@ -162,15 +198,12 @@ module.exports = function(grunt) {
     //build
     grunt.registerTask('build', [
         'clean:dist',
-        //'sass:dist',
-        //'jshint',
-        //'copy:dist',
-        //'useminPrepare',
-        //'usemin',
-        //'includereplace:dist',
-        //'autoprefixer:dist',
-        'cssmin:dist',
+        'sass:dist',
+        'jshint',
+        'copy:dist',
+        'autoprefixer:dist',
         'concat:dist',
+        'cssmin:dist',
         'uglify'
     ]);
 

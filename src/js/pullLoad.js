@@ -4,7 +4,7 @@
  * Created by LiuSong on 2017/4/25.
  */
 
-define("pullLoad", ["iscroll-probe"], function (IScroll) {
+define("pullLoad", function () {
     var utils = (function () {
         var me = {
             defaults: {
@@ -88,7 +88,7 @@ define("pullLoad", ["iscroll-probe"], function (IScroll) {
     //新增锁定下拉方法
     IScroll.prototype.lockPullDown = function (lock) {
         var p = this.pull;
-        if (p.down.element && p.down.lock == !lock) {
+        if (p.down.element && p.down.lock != lock) {
             p.down.lock = !!lock;
             if (p.down.lock) {
                 p.down.element.style.display = "none";
@@ -108,7 +108,7 @@ define("pullLoad", ["iscroll-probe"], function (IScroll) {
     //新增锁定上拉方法
     IScroll.prototype.lockPullUp = function (lock) {
         var p = this.pull;
-        if (p.up.element && p.up.lock == !lock) {
+        if (p.up.element && p.up.lock != lock) {
             p.up.lock = !!lock;
             if (p.up.lock) {
                 p.up.element.style.display = "none";

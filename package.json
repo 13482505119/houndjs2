@@ -43,6 +43,7 @@
     "normalize.css": "^8.0.0",
     "requirejs": "^2.3.5",
     "sweetalert": "^2.1.0",
-    "swiper": "^4.2.0"
+    "swiper": "^4.2.0",
+    "vali-admin": "^2.3.0"
   }
 }
