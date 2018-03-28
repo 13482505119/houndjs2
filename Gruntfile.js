@@ -18,7 +18,7 @@ module.exports = function(grunt) {
         jshint: {
             dist: [
                 'src/js/*.js',
-                '!src/js/json2.js',
+                '!src/js/json2.js'
             ]
         },
         concat: {
@@ -30,6 +30,7 @@ module.exports = function(grunt) {
                         'node_modules/jquery-validation/dist/jquery.validate.min.js',
                         'node_modules/jquery.cookie/jquery.cookie.js',
                         'node_modules/bootstrap/dist/js/bootstrap.bundle.js',
+                        'node_modules/vali-admin/docs/js/plugins/bootstrap-datepicker.min.js',
                         'node_modules/sweetalert/dist/sweetalert.min.js',
                         'src/js/json2.js',
                         'node_modules/requirejs/require.js',
@@ -41,6 +42,7 @@ module.exports = function(grunt) {
                         'node_modules/jquery-validation/dist/jquery.validate.min.js',
                         'node_modules/jquery.cookie/jquery.cookie.js',
                         'node_modules/bootstrap/dist/js/bootstrap.bundle.js',
+                        'node_modules/vali-admin/docs/js/plugins/bootstrap-datepicker.min.js',
                         'node_modules/sweetalert/dist/sweetalert.min.js',
                         'src/js/json2.js',
                         'node_modules/swiper/dist/js/swiper.min.js',

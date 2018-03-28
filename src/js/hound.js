@@ -216,11 +216,12 @@ define("hound", [], function() {
                 }
             });
         },
-        getRequest: function() {
+        getRequest: function(url) {
             var request = {};
-            $.each(location.search.substr(1).split("&"), function(i, n) {
+            url = url || location.search;
+            $.each(url.substr(url.indexOf('?') + 1).split("&"), function (i, n) {
                 var index = n.indexOf("=");
-                if (index != -1) { //忽略无效参数
+                if (index > 0) { //忽略无效参数
                     request[n.substring(0, index)] = decodeURIComponent(n.substr(index + 1));
                 }
             });
@@ -521,35 +522,3 @@ define("hound", [], function() {
 
     return $.hound;
 });
-
-/**
- * Vali Admin BootStrap4 Template
- * init function
- */
-(function() {
-    "use strict";
-
-    var treeviewMenu = $('.app-menu');
-
-    // Toggle Sidebar
-    $('[data-toggle="sidebar"]').click(function(event) {
-        event.preventDefault();
-        $('.app').toggleClass('sidenav-toggled');
-    });
-
-    // Activate sidebar treeview toggle
-    $("[data-toggle='treeview']").click(function(event) {
-        event.preventDefault();
-        if(!$(this).parent().hasClass('is-expanded')) {
-            treeviewMenu.find("[data-toggle='treeview']").parent().removeClass('is-expanded');
-        }
-        $(this).parent().toggleClass('is-expanded');
-    });
-
-    // Set initial active toggle
-    $("[data-toggle='treeview.'].is-expanded").parent().toggleClass('is-expanded');
-
-    //Activate bootstrip tooltips
-    $("[data-toggle='tooltip']").tooltip();
-
-})();
