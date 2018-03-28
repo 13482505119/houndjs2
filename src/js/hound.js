@@ -99,8 +99,10 @@ define("hound", [], function() {
             }).then(
                 function() {
                     if (xhr) {
-                        xhr.abort();
-                        _this.error(_this.messages.timeout);
+                        if (xhr.status != 200) {
+                            xhr.abort();
+                            _this.error(_this.messages.timeout);
+                        }
                     }
                 }
             );
@@ -147,10 +149,13 @@ define("hound", [], function() {
                 url: url,
                 data: data,
                 cache: false,
+                dataType: _this.dataType,
                 success: function(json) {
-                    swal.close();
-                    switch (json.code) {
-                        case 200:
+                    setTimeout(function() {
+                        swal.close();
+                    }, 0);
+                    switch (json.status) {
+                        case 1:
                             if ($.isFunction(fn)) {
                                 fn(json);
                             }
@@ -170,21 +175,14 @@ define("hound", [], function() {
                 },
                 error: function() {
                     _this.error(_this.messages.fail);
-                },
-                dataType: _this.dataType
+                }
             });
         },
         post: function(url, data, fn) {
-            var _this = this,
-                xhr = _this.ajax("POST", url, data, fn);
-
-            _this.loading(xhr);
+            this.loading(this.ajax("POST", url, data, fn));
         },
         get: function(url, data, fn) {
-            var _this = this,
-                xhr = _this.ajax("GET", url, data, fn);
-
-            _this.loading(xhr);
+            this.loading(this.ajax("GET", url, data, fn));
         },
         getHTML: function(url, data, fn) {
             var _this = this;
@@ -203,13 +201,11 @@ define("hound", [], function() {
             });
         },
         loadHTML: function($e, url, data, fn) {
-            var _this = this;
-
             if ($.isFunction(data)) {
                 fn = data;
                 data = {};
             }
-            _this.getHTML(url, data, function(html) {
+            this.getHTML(url, data, function(html) {
                 $e.html(html);
                 if ($.isFunction(fn)) {
                     fn($e);
