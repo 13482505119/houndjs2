@@ -156,6 +156,7 @@ define("hound", [], function() {
                     }, 0);
                     switch (json.status) {
                         case 1:
+                        case 200:
                             if ($.isFunction(fn)) {
                                 fn(json);
                             }
