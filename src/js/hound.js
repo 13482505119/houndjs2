@@ -120,21 +120,28 @@ define("hound", [], function() {
                 }
             }, delay);
         },
-        ajax: function(type, url, data, fn) {
-            var _this = this;
-            var loading = $.notify({
-                title: type + ':',
-                message: url,
-                icon: 'fa fa-spinner fa-spin'
-            }, {
-                delay: _this.timeout,
-                placement: {
-                    from: "bottom",
-                    align: "center"
-                },
-                allow_dismiss: false,
-                showProgressbar: false
-            });
+        ajax: function(type, url, data, fn, isLoading) {
+            var _this = this, loading;
+            if (isLoading) {
+                loading = $.notify({
+                    title: type + ':',
+                    message: url,
+                    icon: 'fa fa-spinner fa-spin'
+                }, {
+                    delay: _this.timeout,
+                    placement: {
+                        from: "bottom",
+                        align: "center"
+                    },
+                    allow_dismiss: false,
+                    showProgressbar: false
+                });
+            } else {
+                loading = {
+                    update: function() {},
+                    close: function() {}
+                };
+            }
 
             $.ajax({
                 type: type,
@@ -182,11 +189,11 @@ define("hound", [], function() {
                 }
             });
         },
-        post: function(url, data, fn) {
-            this.ajax("POST", url, data, fn);
+        post: function(url, data, fn, isLoading) {
+            this.ajax("POST", url, data, fn, isLoading);
         },
-        get: function(url, data, fn) {
-            this.ajax("GET", url, data, fn);
+        get: function(url, data, fn, isLoading) {
+            this.ajax("GET", url, data, fn, isLoading);
         },
         getHTML: function(url, data, fn) {
             $.ajax({
