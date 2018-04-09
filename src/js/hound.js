@@ -25,10 +25,10 @@ define("hound", [], function() {
             dataType: "json",
             timeout: 45000, //ajax请求超时时间:ms
             delay: 2000, //消息提醒后延迟跳转:ms
-            mobile: /^(13[0-9]|14[579]|15[0-3,5-9]|16[6]|17[0135678]|18[0-9]|19[89])\d{8}$/,
-            messages: {
-                fail: "服务器连接错误",
-                mobile: "请输入一个有效的手机号码"
+            api: '',
+            mobile: {
+                reg: /^(13[0-9]|14[579]|15[0-3,5-9]|16[6]|17[0135678]|18[0-9]|19[89])\d{8}$/,
+                message: '请输入一个有效的手机号码'
             }
         },
         hound = function() {
@@ -122,6 +122,7 @@ define("hound", [], function() {
         },
         ajax: function(type, url, data, fn, isLoading) {
             var _this = this, loading;
+            url = _this.api + url;
             if (isLoading) {
                 loading = $.notify({
                     title: type + ':',
@@ -196,6 +197,7 @@ define("hound", [], function() {
             this.ajax("GET", url, data, fn, isLoading);
         },
         getHTML: function(url, data, fn) {
+            url = this.api + url;
             $.ajax({
                 url: url,
                 data: data,
@@ -403,7 +405,7 @@ define("hound", [], function() {
                     return false;
                 }
 
-                if ($.hound.mobile.test($target.val())) {
+                if ($.hound.mobile.reg.test($target.val())) {
                     data[$target.prop("name")] = $target.val();
                     $.hound.post(url, data, function() {
                         $this.data("waiting", true);
@@ -420,7 +422,7 @@ define("hound", [], function() {
                         }, 1000);
                     });
                 } else {
-                    $.hound.alert($.hound.messages.mobile);
+                    $.hound.alert($.hound.mobile.message);
                 }
             },
             refreshCode: function(element, event) {
@@ -505,8 +507,8 @@ define("hound", [], function() {
         }
     });
     $.validator.addMethod("mobile", function(value, element) {
-        return this.optional(element) || $.hound.mobile.test(value);
-    }, $.hound.messages.mobile);
+        return this.optional(element) || $.hound.mobile.reg.test(value);
+    }, $.hound.mobile.message);
     $.extend($.validator.messages, {
         required: "这是必填字段",
         remote: "请修正此字段",
