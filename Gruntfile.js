@@ -25,6 +25,7 @@ module.exports = function(grunt) {
             dist: {
                 files: {
                     'dist/js/hound.js': [
+                        'src/js/json2.js',
                         'node_modules/jquery/dist/jquery.min.js',
                         'node_modules/jquery-form/dist/jquery.form.min.js',
                         'node_modules/jquery-validation/dist/jquery.validate.min.js',
@@ -33,11 +34,11 @@ module.exports = function(grunt) {
                         'node_modules/vali-admin/docs/js/plugins/bootstrap-datepicker.min.js',
                         'node_modules/vali-admin/docs/js/plugins/bootstrap-notify.min.js',
                         'node_modules/sweetalert/dist/sweetalert.min.js',
-                        'src/js/json2.js',
                         'node_modules/requirejs/require.js',
                         'src/js/hound.js'
                     ],
                     'dist/js/hound.mobile.js': [
+                        'src/js/json2.js',
                         'node_modules/jquery/dist/jquery.min.js',
                         'node_modules/jquery-form/dist/jquery.form.min.js',
                         'node_modules/jquery-validation/dist/jquery.validate.min.js',
@@ -46,7 +47,6 @@ module.exports = function(grunt) {
                         'node_modules/vali-admin/docs/js/plugins/bootstrap-datepicker.min.js',
                         'node_modules/vali-admin/docs/js/plugins/bootstrap-notify.min.js',
                         'node_modules/sweetalert/dist/sweetalert.min.js',
-                        'src/js/json2.js',
                         'node_modules/swiper/dist/js/swiper.min.js',
                         'node_modules/iscroll/build/iscroll-probe.js',
                         'node_modules/requirejs/require.js',

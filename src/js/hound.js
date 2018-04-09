@@ -1,11 +1,14 @@
 /**
- * Hound v2.0.1
+ * Hound v2.0.2
  * Created by LiuSong on 2017/3/14.
+ * Updated by LiuSong on 2018/4/9
  * requires: jQuery 3+
  *           jQuery Validation
  *           jQuery Form
  *           jQuery Cookie
  *           Bootstrap-bundle
+ *           Bootstrap-datepicker
+ *           Bootstrap-notify
  *           SweetAlert
  *           JSON2
  *           Swiper (mobile)
@@ -21,11 +24,9 @@ define("hound", [], function() {
             debug: false,
             dataType: "json",
             timeout: 45000, //ajax请求超时时间:ms
-            delay: 1500, //消息提醒后延迟跳转:ms
+            delay: 2000, //消息提醒后延迟跳转:ms
             mobile: /^(13[0-9]|14[579]|15[0-3,5-9]|16[6]|17[0135678]|18[0-9]|19[89])\d{8}$/,
             messages: {
-                loading: "加载中……",
-                timeout: "请求超时",
                 fail: "服务器连接错误",
                 mobile: "请输入一个有效的手机号码"
             }
@@ -84,29 +85,6 @@ define("hound", [], function() {
                 }
             });
         },
-        loading: function(xhr) {
-            var _this = this,
-                loading = document.createElement("i");
-            loading.className = 'fa fa-circle-o-notch fa-spin fa-4x';
-
-            swal({
-                title: _this.messages.loading,
-                content: loading,
-                buttons: false,
-                closeOnClickOutside: false,
-                closeOnEsc: false,
-                timer: _this.timeout
-            }).then(
-                function() {
-                    if (xhr) {
-                        if (xhr.status != 200) {
-                            xhr.abort();
-                            _this.error(_this.messages.timeout);
-                        }
-                    }
-                }
-            );
-        },
         redirect: function(url, delay) {
             if (this.isBlank(url)) return;
 
@@ -144,61 +122,96 @@ define("hound", [], function() {
         },
         ajax: function(type, url, data, fn) {
             var _this = this;
-            return $.ajax({
+            var loading = $.notify({
+                title: type + ':',
+                message: url,
+                icon: 'fa fa-spinner fa-spin'
+            }, {
+                delay: _this.timeout,
+                placement: {
+                    from: "bottom",
+                    align: "center"
+                },
+                allow_dismiss: false,
+                showProgressbar: false
+            });
+
+            $.ajax({
                 type: type,
                 url: url,
                 data: data,
                 cache: false,
                 dataType: _this.dataType,
                 success: function(json) {
-                    setTimeout(function() {
-                        swal.close();
-                    }, 0);
-                    switch (json.status) {
-                        case 1:
+                    switch (json.stat) {
                         case 200:
+                            loading.update({
+                                type: 'success',
+                                message: _this.isBlank(json.msg) ? 'OK' : json.msg,
+                                icon: 'fa fa-check'
+                            });
+                            setTimeout(function() {
+                                loading.close();
+                                _this.redirect(json.redirect);
+                            }, 2000);
                             if ($.isFunction(fn)) {
                                 fn(json);
                             }
-                            if (!_this.isBlank(json.msg)) {
-                                _this.success(json.msg, "", json.timer);
-                            }
-                            if (!_this.isBlank(json.redirect)) {
-                                _this.redirect(json.redirect, _this.isBlank(json.msg) ? 0 : _this.delay);
-                            }
                             break;
                         default :
-                            if (!_this.isBlank(json.msg)) {
-                                _this.alert(json.msg);
-                            }
+                            loading.update({
+                                type: 'warning',
+                                message: _this.isBlank(json.msg) ? json.stat : json.msg,
+                                icon: 'fa fa-warning'
+                            });
+                            setTimeout(function() {
+                                loading.close();
+                            }, 3000);
                             break;
                     }
                 },
-                error: function() {
-                    _this.error(_this.messages.fail);
+                error: function(xhr, err) {
+                    loading.update({
+                        type: 'danger',
+                        message: xhr.statusText == 'OK' ? err : xhr.statusText,
+                        icon: 'fa fa-warning'
+                    });
+                    setTimeout(function() {
+                        loading.close();
+                    }, 5000);
                 }
             });
         },
         post: function(url, data, fn) {
-            this.loading(this.ajax("POST", url, data, fn));
+            this.ajax("POST", url, data, fn);
         },
         get: function(url, data, fn) {
-            this.loading(this.ajax("GET", url, data, fn));
+            this.ajax("GET", url, data, fn);
         },
         getHTML: function(url, data, fn) {
-            var _this = this;
-            return $.ajax({
+            $.ajax({
                 url: url,
                 data: data,
+                dataType: "html",
                 success: function(html) {
                     if ($.isFunction(fn)) {
                         fn(html);
                     }
                 },
-                error: function() {
-                    _this.error(_this.messages.fail);
-                },
-                dataType: "html"
+                error: function(xhr) {
+                    $.notify({
+                        title: xhr.status + ':',
+                        message: xhr.statusText,
+                        icon: 'fa fa-warning',
+                        url: url,
+                        target: '_blank'
+                    }, {
+                        placement: {
+                            from: "bottom",
+                            align: "center"
+                        }
+                    });
+                }
             });
         },
         loadHTML: function($e, url, data, fn) {
@@ -225,55 +238,44 @@ define("hound", [], function() {
             return request;
         },
         fireEvent: function(node, eventName) {
-            // Make sure we use the ownerDocument from the provided node to avoid cross-window problems
             var doc,
                 event;
             if (node.ownerDocument) {
                 doc = node.ownerDocument;
             } else if (node.nodeType == 9){
-                // the node may be the document itself, nodeType 9 = DOCUMENT_NODE
                 doc = node;
             } else {
                 throw new Error("Invalid node passed to fireEvent: " + node.id);
             }
 
             if (node.dispatchEvent) {
-                // Gecko-style approach (now the standard) takes more work
                 var eventClass = "";
 
-                // Different events have different event classes.
-                // If this switch statement can't map an eventName to an eventClass,
-                // the event firing is going to fail.
                 switch (eventName) {
-                    case "click": // Dispatching of 'click' appears to not work correctly in Safari. Use 'mousedown' or 'mouseup' instead.
+                    case "click":
                     case "mousedown":
                     case "mouseup":
                         eventClass = "MouseEvents";
                         break;
-
                     case "focus":
                     case "change":
                     case "blur":
                     case "select":
                         eventClass = "HTMLEvents";
                         break;
-
                     default:
                         throw "fireEvent: Couldn't find an event class for event '" + eventName + "'.";
-                        //break;
                 }
                 event = doc.createEvent(eventClass);
 
                 var bubbles = eventName != "change";
-                event.initEvent(eventName, bubbles, true); // All events created as bubbling and cancelable.
+                event.initEvent(eventName, bubbles, true);
 
-                event.synthetic = true; // allow detection of synthetic events
-                // The second parameter says go ahead with the default action
+                event.synthetic = true;
                 node.dispatchEvent(event, true);
             } else  if (node.fireEvent) {
-                // IE-old school style
                 event = doc.createEventObject();
-                event.synthetic = true; // allow detection of synthetic events
+                event.synthetic = true;
                 node.fireEvent("on" + eventName, event);
             }
         }
@@ -356,26 +358,27 @@ define("hound", [], function() {
                     },
                     //resetForm: true,
                     dataType: "json",
-                    error: function() {//xhr, statusText, error, $form
-                        $.hound.error($.hound.messages.fail);
+                    timeout: $.hound.timeout,
+                    error: function(xhr, statusText) {//xhr, statusText, error, $form
+                        $.hound.error(statusText);
                     },
-                    success: function(responseText) {//responseText, statusText, xhr, $form
-                        switch (responseText.code) {
+                    success: function(json) {//responseText, statusText, xhr, $form
+                        switch (json.stat) {
                             case 200:
                                 $this.resetForm();
-                                if (!$.hound.isBlank(responseText.msg)) {
-                                    $.hound.success(responseText.msg, "", responseText.timer);
+                                if (!$.hound.isBlank(json.msg)) {
+                                    $.hound.success(json.msg, "", json.timer);
                                 }
                                 break;
                             default:
                                 $this.find(":password").val("");
-                                if (!$.hound.isBlank(responseText.msg)) {
-                                    $.hound.alert(responseText.msg);
+                                if (!$.hound.isBlank(json.msg)) {
+                                    $.hound.alert(json.msg);
                                 }
                                 break;
                         }
-                        if (!$.hound.isBlank(responseText.redirect)) {
-                            $.hound.redirect(responseText.redirect, $.hound.isBlank(responseText.msg) ? 0 : $.hound.delay);
+                        if (!$.hound.isBlank(json.redirect)) {
+                            $.hound.redirect(json.redirect, $.hound.isBlank(json.msg) ? 0 : $.hound.delay);
                         }
                     }
                 });

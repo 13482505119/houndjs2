@@ -2,53 +2,54 @@
  * Created by Administrator on 2018/3/26.
  */
 define(['hound', 'pullLoad'], function(hound, pullLoad) {
-    console.log(hound, pullLoad);
-    //hound.alert('确认吗', '确认吗', 10000);
-    //hound.loading();
+    var type = 'post',
+        url = 'index.json',
+        timeout = 45000;
 
-    var loading = document.createElement("i");
-    loading.className = 'fa fa-circle-o-notch fa-spin fa-4x';
+    hound.ajax(type, url, {}, function() {});
 
-    swal({
-        title: 'test',
-        content: loading,
-        buttons: false,
-        closeOnClickOutside: false,
-        closeOnEsc: false,
-        timer: 5000
-    }).then(
-        function(dismiss) {
-            console.log(dismiss);
-        }
-    );
-
-    /*swal.setDefaults({
-        buttons: {
-            cancel: {
-                text: '取消'
-            },
-            confirm: {
-                text: '确认'
-            }
-        }
-    });
-    swal({
-        title: '确认吗',
-        type: "question",
-        buttons: {
-            cancel: {
-                text: '取消',
-                visible: true
-            },
-            confirm: {
-                text: '确认'
-            }
-        },
-        closeOnClickOutside: false,
-        closeOnEsc: false
-    }).then(
-        function (value) {
-            console.log(value);
-        }
-    );*/
+    //var loading = $.notify({
+    //    title: type + ':',
+    //    message: url,
+    //    icon: 'fa fa-spinner fa-spin' //fa-circle-o-notch fa-spinner
+    //}, {
+    //    delay: timeout,
+    //    placement: {
+    //        from: "bottom",
+    //        align: "center"
+    //    },
+    //    allow_dismiss: false,
+    //    showProgressbar: false
+    //});
+    //$.ajax({
+    //    type: type,
+    //    url: url,
+    //    data: {},
+    //    cache: false,
+    //    dataType: 'json',
+    //    timeout: timeout,
+    //    success: function(json) {
+    //        loading.update({
+    //            type: 'success',
+    //            message: 'OK',
+    //            icon: 'fa fa-check',
+    //            onClose: function() {
+    //                console.log('close');
+    //            }
+    //        });
+    //        setTimeout(function() {
+    //            loading.close();
+    //        }, 1000);
+    //    },
+    //    error: function(xhr, err) {
+    //        loading.update({
+    //            type: 'danger',
+    //            message: xhr.statusText == 'OK' ? err : xhr.statusText,
+    //            icon: 'fa fa-warning'
+    //        });
+    //        setTimeout(function() {
+    //            loading.close();
+    //        }, 5000);
+    //    }
+    //});
 });
