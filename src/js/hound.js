@@ -246,6 +246,45 @@ define("hound", [], function() {
             });
             return request;
         },
+        ajaxSubmit: function($form) {
+            var validate = !!$form.data('validate');
+
+            if (!$form.is('form')) {
+                throw new Error('Element is not a form');
+            }
+
+            $form.ajaxSubmit({
+                beforeSubmit: function() {//arr, $form, options
+                    return validate ? $form.valid() : true;
+                },
+                //resetForm: true,
+                dataType: "json",
+                timeout: $.hound.timeout,
+                error: function(xhr, statusText) {//xhr, statusText, error, $form
+                    //$.hound.error(statusText);
+                    $.hound.error(xhr.statusText == 'OK' ? statusText : xhr.status + ' : ' + xhr.statusText);
+                },
+                success: function(json) {//responseText, statusText, xhr, $form
+                    switch (json.stat) {
+                        case 200:
+                            $form.resetForm();
+                            if (!$.hound.isBlank(json.msg)) {
+                                $.hound.success(json.msg, "", json.timer);
+                            }
+                            break;
+                        default:
+                            $form.find(":password").val("");
+                            if (!$.hound.isBlank(json.msg)) {
+                                $.hound.alert(json.msg);
+                            }
+                            break;
+                    }
+                    if (!$.hound.isBlank(json.redirect)) {
+                        $.hound.redirect(json.redirect, $.hound.isBlank(json.msg) ? 0 : $.hound.delay);
+                    }
+                }
+            });
+        },
         fireEvent: function(node, eventName) {
             var doc,
                 event;
@@ -357,40 +396,7 @@ define("hound", [], function() {
             },
             ajaxSubmit: function(element, event) {
                 event.preventDefault();
-
-                var $this = $(element).closest("form"),
-                    validate = !!$this.data("validate");
-
-                $this.ajaxSubmit({
-                    beforeSubmit: function() {//arr, $form, options
-                        return validate ? $this.valid() : true;
-                    },
-                    //resetForm: true,
-                    dataType: "json",
-                    timeout: $.hound.timeout,
-                    error: function(xhr, statusText) {//xhr, statusText, error, $form
-                        $.hound.error(statusText);
-                    },
-                    success: function(json) {//responseText, statusText, xhr, $form
-                        switch (json.stat) {
-                            case 200:
-                                $this.resetForm();
-                                if (!$.hound.isBlank(json.msg)) {
-                                    $.hound.success(json.msg, "", json.timer);
-                                }
-                                break;
-                            default:
-                                $this.find(":password").val("");
-                                if (!$.hound.isBlank(json.msg)) {
-                                    $.hound.alert(json.msg);
-                                }
-                                break;
-                        }
-                        if (!$.hound.isBlank(json.redirect)) {
-                            $.hound.redirect(json.redirect, $.hound.isBlank(json.msg) ? 0 : $.hound.delay);
-                        }
-                    }
-                });
+                $.hound.ajaxSubmit($(element).closest("form"));
             },
             sendCode: function(element, event) {
                 event.preventDefault();
@@ -447,7 +453,7 @@ define("hound", [], function() {
                     var element = this,
                         confirm = $(this).data("confirm");
 
-                    if ($.isBlank(confirm)) {
+                    if ($.hound.isBlank(confirm)) {
                         handle(element, event);
                     } else {
                         $.hound.confirm(confirm, '', function() {
@@ -472,6 +478,12 @@ define("hound", [], function() {
                 $this.find('.form-control-feedback, .help-block').remove();
             };
         }).validate();
+
+        //form async
+        $(document).on('submit', 'form[data-async="true"]', function(event) {
+            event.preventDefault();
+            $.hound.ajaxSubmit($(this));
+        });
     });
 
     //jQuery Validate Settings
