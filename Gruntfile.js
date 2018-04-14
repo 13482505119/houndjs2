@@ -127,7 +127,7 @@ module.exports = function(grunt) {
                     ]
                 },
                 options: {
-                    preserveComments: false
+                    keepSpecialComments: 0
                 }
             }
         },

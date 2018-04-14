@@ -110,9 +110,9 @@ define("hound", [], function() {
                         var $modal = $('.modal.show'),
                             $modalSub = $modal.find('.modal-sub');
                         if ($modalSub.length == 1 && $modalSub.css('display') != 'none') {
-                            $modalSub.css('display', 'none');
+                            $modalSub.css('display', 'none').trigger('closed');
                         } else {
-                            $modal.modal('hide');
+                            $modal.modal('hide').trigger('closed');
                         }
                         break;
                     default :
@@ -276,7 +276,7 @@ define("hound", [], function() {
                 success: function(json) {//responseText, statusText, xhr, $form
                     switch (json.stat) {
                         case 200:
-                            $form.resetForm();
+                            $form.trigger('success').resetForm();
                             if (!$.hound.isBlank(json.msg)) {
                                 $.hound.success(json.msg, "", json.timer);
                             }
@@ -351,18 +351,8 @@ define("hound", [], function() {
                     url = $this.data("url"),
                     data = $.extend({}, $this.data("data"));
 
-                $.hound.post(url, data);
-            },
-            toggle: function(element, event) {
-                event.preventDefault();
-
-                var $this = $(element),
-                    $target = $this.children().eq($this.hasClass("toggled") ? 1 : 0),
-                    url = $this.data("url") || $target.data("url"),
-                    data = $.extend({}, $target.data("data"));
-
                 $.hound.post(url, data, function() {
-                    $this.toggleClass("toggled");
+                    $this.trigger('success');
                 });
             },
             remove: function(element, event) {

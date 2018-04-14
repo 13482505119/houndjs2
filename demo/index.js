@@ -6,7 +6,15 @@ define(['hound', 'pullLoad'], function(hound, pullLoad) {
         url = 'index.json',
         timeout = 45000;
 
-    hound.ajax(type, url, {}, function() {});
+    //hound.ajax(type, url, {}, function() {});
+    $('body').append('<div id="closed"></div>');
+
+    $(document).on('closed', '#closed', function() {
+        console.log('closed');
+    });
+
+    //$('#closed').triggerHandler('closed');
+    $('#closed').trigger('closed');
 
     //var loading = $.notify({
     //    title: type + ':',
