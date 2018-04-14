@@ -20,7 +20,7 @@
 define("hound", [], function() {
 
     var config = {
-            version: "2.0.1",
+            version: "2.0.2",
             debug: false,
             dataType: "json",
             timeout: 45000, //ajax请求超时时间:ms
@@ -106,6 +106,15 @@ define("hound", [], function() {
                         window.self.close();
                         return false;
                         //break;
+                    case "closeModal":
+                        var $modal = $('.modal.show'),
+                            $modalSub = $modal.find('.modal-sub');
+                        if ($modalSub.length == 1 && $modalSub.css('display') != 'none') {
+                            $modalSub.css('display', 'none');
+                        } else {
+                            $modal.modal('hide');
+                        }
+                        break;
                     default :
                         var a = document.createElement("a");
                         if (!a.click) {
