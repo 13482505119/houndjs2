@@ -261,7 +261,8 @@ define("hound", [], function() {
             return request;
         },
         ajaxSubmit: function($form) {
-            var validate = !!$form.data('validate');
+            var _this = this,
+                validate = !!$form.data('validate');
 
             if (!$form.is('form')) {
                 throw new Error('Element is not a form');
@@ -273,28 +274,28 @@ define("hound", [], function() {
                 },
                 //resetForm: true,
                 dataType: "json",
-                timeout: $.hound.timeout,
+                timeout: _this.timeout,
                 error: function(xhr, statusText) {//xhr, statusText, error, $form
-                    //$.hound.error(statusText);
-                    $.hound.error(xhr.statusText == 'OK' ? statusText : xhr.status + ' : ' + xhr.statusText);
+                    //_this.error(statusText);
+                    _this.error(xhr.statusText == 'OK' ? statusText : xhr.status + ' : ' + xhr.statusText);
                 },
                 success: function(json) {//responseText, statusText, xhr, $form
                     switch (json.stat) {
                         case 200:
                             $form.data('success', json.data).trigger('success').resetForm();
-                            if (!$.hound.isBlank(json.msg)) {
-                                $.hound.success(json.msg, "", json.timer);
+                            if (!_this.isBlank(json.msg)) {
+                                _this.success(json.msg, "", _this.delay);
                             }
                             break;
                         default:
                             $form.find(":password").val("");
-                            if (!$.hound.isBlank(json.msg)) {
-                                $.hound.alert(json.msg);
+                            if (!_this.isBlank(json.msg)) {
+                                _this.alert(json.msg);
                             }
                             break;
                     }
-                    if (!$.hound.isBlank(json.redirect)) {
-                        $.hound.redirect(json.redirect, $.hound.isBlank(json.msg) ? 0 : $.hound.delay);
+                    if (!_this.isBlank(json.redirect)) {
+                        _this.redirect(json.redirect, _this.isBlank(json.msg) ? 0 : _this.delay);
                     }
                 }
             });
