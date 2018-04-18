@@ -193,9 +193,14 @@ define("hound", [], function() {
                         message: xhr.statusText == 'OK' ? err : xhr.statusText,
                         icon: 'fa fa-warning'
                     });
+
                     setTimeout(function() {
                         loading.close();
                     }, 5000);
+
+                    if (xhr.statusText == 'OK') {
+                        throw new Error(err);
+                    }
                 }
             });
         },
@@ -276,7 +281,7 @@ define("hound", [], function() {
                 success: function(json) {//responseText, statusText, xhr, $form
                     switch (json.stat) {
                         case 200:
-                            $form.trigger('success').resetForm();
+                            $form.data('success', json.data).trigger('success').resetForm();
                             if (!$.hound.isBlank(json.msg)) {
                                 $.hound.success(json.msg, "", json.timer);
                             }
@@ -351,8 +356,8 @@ define("hound", [], function() {
                     url = $this.data("url"),
                     data = $.extend({}, $this.data("data"));
 
-                $.hound.post(url, data, function() {
-                    $this.trigger('success');
+                $.hound.post(url, data, function(json) {
+                    $this.data('success', json.data).trigger('success');
                 });
             },
             remove: function(element, event) {
