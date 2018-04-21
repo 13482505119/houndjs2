@@ -144,7 +144,8 @@ define("hound", [], function() {
                         align: "center"
                     },
                     allow_dismiss: false,
-                    showProgressbar: false
+                    showProgressbar: false,
+                    z_index: 3000
                 });
             } else {
                 loading = {
@@ -232,7 +233,8 @@ define("hound", [], function() {
                         placement: {
                             from: "bottom",
                             align: "center"
-                        }
+                        },
+                        z_index: 3000
                     });
                 }
             });
