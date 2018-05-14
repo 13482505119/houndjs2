@@ -16,6 +16,13 @@ define(['hound', 'pullLoad'], function(hound, pullLoad) {
     //$('#closed').triggerHandler('closed');
     $('#closed').trigger('closed');
 
+    hound.notify('标题', '消息');
+    hound.notify('标题', '消息', 'success');
+    hound.notify('标题', '消息', 'warning');
+    hound.notify('标题', '消息', 'danger');
+
+
+
     //var loading = $.notify({
     //    title: type + ':',
     //    message: url,

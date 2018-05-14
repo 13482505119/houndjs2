@@ -1,7 +1,7 @@
 /**
  * Hound v2.0.2
  * Created by LiuSong on 2017/3/14.
- * Updated by LiuSong on 2018/4/9
+ * Updated by LiuSong on 2018/5/14
  * requires: jQuery 3+
  *           jQuery Validation
  *           jQuery Form
@@ -20,12 +20,18 @@
 define("hound", [], function() {
 
     var config = {
-            version: "2.0.2",
+            version: "2.0.3",
             debug: false,
             dataType: "json",
             timeout: 45000, //ajax请求超时时间:ms
             delay: 2000, //消息提醒后延迟跳转:ms
             api: '',
+            icons: {
+                info: 'fa fa-lg fa-exclamation-circle', //fa-exclamation-circle,fa-exclamation-triangle
+                success: 'fa fa-lg fa-check-circle',
+                warning: 'fa fa-lg fa-warning',
+                danger: 'fa fa-lg fa-times-circle'
+            },
             mobile: {
                 reg: /^(13[0-9]|14[579]|15[0-3,5-9]|16[6]|17[0135678]|18[0-9]|19[89])\d{8}$/,
                 message: '请输入一个有效的手机号码'
@@ -38,6 +44,23 @@ define("hound", [], function() {
     $.extend(hound.prototype, {
         isBlank: function(obj) {
             return(!obj || $.trim(obj) === "");
+        },
+        notify: function(title, message, type) {
+            type = type || 'info';
+            var icon = this.icons[type] ? this.icons[type] : this.icons.info;
+
+            $.notify({
+                title: title,
+                message: message,
+                icon: icon
+            }, {
+                type: type,
+                placement: {
+                    from: "bottom",
+                    align: "center"
+                },
+                z_index: 3000
+            });
         },
         swal: function(title, text, icon, timer) {
             swal({
