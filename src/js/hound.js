@@ -23,6 +23,10 @@ define("hound", [], function() {
             version: "2.0.3",
             debug: false,
             dataType: "json",
+            data: {
+                token: $.cookie('TOKEN'),
+                session: $.cookie('SESSIONUID')
+            },
             timeout: 45000, //ajax请求超时时间:ms
             delay: 2000, //消息提醒后延迟跳转:ms
             api: '',
@@ -104,7 +108,9 @@ define("hound", [], function() {
                 closeOnClickOutside: false
             }).then(function(result) {
                 if (result) {
-                    confirm();
+                    if ($.isFunction(confirm)) {
+                        confirm();
+                    }
                 }
             });
         },
@@ -155,6 +161,7 @@ define("hound", [], function() {
         ajax: function(type, url, data, fn, isLoading) {
             var _this = this, loading;
             url = _this.api + url;
+            data = $.extend(data, _this.data);
             if (isLoading) {
                 loading = $.notify({
                     title: type + ':',
@@ -236,6 +243,7 @@ define("hound", [], function() {
         },
         getHTML: function(url, data, fn) {
             url = this.api + url;
+            data = $.extend(data, this.data);
             $.ajax({
                 url: url,
                 data: data,
@@ -298,6 +306,7 @@ define("hound", [], function() {
                     return validate ? $form.valid() : true;
                 },
                 //resetForm: true,
+                data: _this.data,
                 dataType: "json",
                 timeout: _this.timeout,
                 error: function(xhr, statusText) {//xhr, statusText, error, $form
