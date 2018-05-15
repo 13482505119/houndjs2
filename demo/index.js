@@ -21,7 +21,17 @@ define(['hound', 'pullLoad'], function(hound, pullLoad) {
     hound.notify('标题', '消息', 'warning');
     hound.notify('标题', '消息', 'danger');
 
+    var countries = [
+        { value: 'Andorra', data: 'AD' },
+        { value: 'Zimbabwe', data: 'ZZ' }
+    ];
 
+    $('#autocomplete').autocomplete({
+        lookup: countries,
+        onSelect: function (suggestion) {
+            //alert('You selected: ' + suggestion.value + ', ' + suggestion.data);
+        }
+    });
 
     //var loading = $.notify({
     //    title: type + ':',

@@ -23,6 +23,7 @@
   "devDependencies": {
     "bootstrap": "^4.0.0",
     "clipboard": "^2.0.0",
+    "devbridge-autocomplete": "^1.4.7",
     "font-awesome": "^4.7.0",
     "grunt": "^1.0.2",
     "grunt-autoprefixer": "^3.0.4",
