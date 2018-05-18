@@ -27,8 +27,10 @@ define(['hound', 'pullLoad'], function(hound, pullLoad) {
     ];
 
     $('#autocomplete').autocomplete({
-        lookup: countries,
+        //lookup: countries,
+        serviceUrl: 'searchFlight',
         onSelect: function (suggestion) {
+            console.log(suggestion);
             //alert('You selected: ' + suggestion.value + ', ' + suggestion.data);
         }
     });

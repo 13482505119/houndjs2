@@ -1,0 +1,595 @@
+{
+    "query": "m",
+    "suggestions": [{
+        "value": "TR868 \u5eca\u66fc\u673a\u573aDMK \u6210\u7530\u673a\u573aNRT",
+        "data": "768"
+    }, {
+        "value": "KE2707 \u91d1\u6d66\u56fd\u9645\u673a\u573aGMP \u7fbd\u7530\u673a\u573aHND",
+        "data": "764"
+    }, {
+        "value": "MM64 \u9999\u6e2f\u673a\u573aHKG \u5173\u897f\u673a\u573aKIX",
+        "data": "759"
+    }, {
+        "value": "OZ1055 \u7fbd\u7530\u673a\u573aHND \u91d1\u6d66\u673a\u573aGMP",
+        "data": "754"
+    }, {
+        "value": "MM65 \u5173\u897f\u673a\u573aKIX \u9999\u6e2f\u673a\u573aHKG",
+        "data": "750"
+    }, {
+        "value": "QF080 \u6210\u7530\u673a\u573aNRT \u58a8\u5c14\u672c\u673a\u573aMEL",
+        "data": "749"
+    }, {
+        "value": "MM776 \u6843\u5712\u673a\u573aTPE \u4ed9\u53f0\u673a\u573aSDJ",
+        "data": "747"
+    }, {
+        "value": "MU2793 \u5927\u8fde\u5468\u6c34\u5b50\u56fd\u9645\u673a\u573aDLC \u5173\u897f\u56fd\u9645\u673a\u573aKIX",
+        "data": "730"
+    }, {
+        "value": "MU5074 \u4e2d\u90e8\u673a\u573aNKM \u592a\u539f\u673a\u573aTYN",
+        "data": "727"
+    }, {
+        "value": "MU8724 \u5173\u897f\u673a\u573aKIX \u6d66\u4e1c\u56fd\u9645\u673a\u573aPVG",
+        "data": "726"
+    }, {
+        "value": "MU8723 \u4e0a\u6d77\u6d66\u4e1c\u673a\u573aPVG \u6210\u7530\u673a\u573aNRT",
+        "data": "722"
+    }, {
+        "value": "NH935 \u6210\u7530\u673a\u573aNRT \u53a6\u95e8\u673a\u573aXMN",
+        "data": "713"
+    }, {
+        "value": "MU8725 \u4e0a\u6d77\u6d66\u4e1c\u673a\u573aPVG \u5173\u897f\u673a\u573aKIX",
+        "data": "702"
+    }, {
+        "value": "MM005 \u5173\u897f\u56fd\u9645\u673a\u573aKIX \u4ec1\u5ddd\u56fd\u9645\u673a\u573aICN",
+        "data": "701"
+    }, {
+        "value": "HX672 \u9999\u6e2f\u673a\u573aHKG \u5bab\u5d0e\u673a\u573aKMI",
+        "data": "696"
+    }, {
+        "value": "MF816 \u6210\u7530\u673a\u573aNRT \u53a6\u95e8\u9ad8\u5d0e\u673a\u573aXMN",
+        "data": "694"
+    }, {
+        "value": "MF815 \u53a6\u95e8\u9ad8\u5d0e\u673a\u573aXMN \u6210\u7530\u673a\u573aNRT",
+        "data": "693"
+    }, {
+        "value": "MU8764 \u95a2\u897f\u673a\u573aKIX \u6d66\u4e1c\u673a\u573aPVG",
+        "data": "686"
+    }, {
+        "value": "MU8733 \u4e0a\u6d77\u8679\u6865\u56fd\u9645\u673a\u573aSHA \u7fbd\u7530\u673a\u573aHND",
+        "data": "683"
+    }, {
+        "value": "MU526 \u5173\u897f\u673a\u573aKIX \u9996\u90fd\u673a\u573aPEK",
+        "data": "682"
+    }, {
+        "value": "FM538 \u7fbd\u7530\u673a\u573aHND \u4e0a\u6d77\u8679\u6865\u673a\u573aSHA",
+        "data": "675"
+    }, {
+        "value": "FM537 \u4e0a\u6d77\u8679\u6865\u673a\u573aSHA \u7fbd\u7530\u673a\u573aHND",
+        "data": "674"
+    }, {
+        "value": "OZ1045 \u97e9\u56fd\u91d1\u6d66\u673a\u573aGMP \u7fbd\u7530\u673a\u573aHND",
+        "data": "671"
+    }, {
+        "value": "MU743 \u9996\u90fd\u673a\u573aPEK \u4e2d\u90e8\u673a\u573aNGO",
+        "data": "658"
+    }, {
+        "value": "XJ610 \u5eca\u66fc\u673a\u573aDMK \u5173\u897f\u673a\u573aKIX",
+        "data": "656"
+    }, {
+        "value": "MU2881 \u4e0a\u6d77\u6d66\u4e1c\u673a\u573aPVG \u5173\u897f\u673a\u573aKIX",
+        "data": "651"
+    }, {
+        "value": "OZ1075 \u7fbd\u7530\u673a\u573aHND \u91d1\u6d66\u56fd\u9645\u673a\u573aGMP",
+        "data": "650"
+    }, {
+        "value": "MU8701 \u4e0a\u6d77\u6d66\u4e1c\u673a\u573aPVG \u7fbd\u7530\u673a\u573aHND",
+        "data": "649"
+    }, {
+        "value": "MU2006 \u4e2d\u90e8\u56fd\u9645\u673a\u573aNGO \u6210\u90fd\u53cc\u6d41\u673a\u573aCTU",
+        "data": "648"
+    }, {
+        "value": "MU2005 \u6210\u90fd\u53cc\u6d41\u673a\u573aCTU \u4e2d\u90e8\u56fd\u9645\u673a\u573aNGO",
+        "data": "647"
+    }, {
+        "value": "UA177 \u5173\u5c9b\u673a\u573aGUM \u5173\u897f\u673a\u573aKIX",
+        "data": "646"
+    }, {
+        "value": "NH936 \u53a6\u95e8\u673a\u573aXMN \u6210\u7530\u673a\u573aNRT",
+        "data": "645"
+    }, {
+        "value": "NX806 \u6fb3\u95e8\u673a\u573aMFM \u798f\u5188\u673a\u573aFUK",
+        "data": "616"
+    }, {
+        "value": "MM921 \u90a3\u9738\u673a\u573aOKA \u53f0\u6e7e\u6843\u56ed\u673a\u573aTPE",
+        "data": "615"
+    }, {
+        "value": "MM928 \u53f0\u6e7e\u6843\u56ed\u673a\u573aTPE \u90a3\u9738\u673a\u573aOKA",
+        "data": "614"
+    }, {
+        "value": "FM516 \u5173\u897f\u673a\u573aKIX \u4e0a\u6d77\u6d66\u4e1c\u673a\u573aPVG",
+        "data": "611"
+    }, {
+        "value": "FM515 \u4e0a\u6d77\u6d66\u4e1c\u56fd\u9645\u673a\u573aPVG \u5173\u897f\u673a\u573aKIX",
+        "data": "610"
+    }, {
+        "value": "MF835 \u798f\u5dde\u957f\u4e50\u56fd\u9645\u673a\u573aFOC \u5173\u897f\u673a\u573aKIX",
+        "data": "607"
+    }, {
+        "value": "NX856 \u6fb3\u95e8\u673a\u573aMFM \u5173\u897f\u673a\u573aKIX",
+        "data": "603"
+    }, {
+        "value": "KE2708 \u7fbd\u7530\u673a\u573aHND \u91d1\u6d66\u56fd\u9645\u673a\u573aGMP",
+        "data": "599"
+    }, {
+        "value": "FM226 \u5173\u897f\u673a\u573aKIX \u4e0a\u6d77\u6d66\u4e1c\u673a\u573aPVG",
+        "data": "594"
+    }, {
+        "value": "FM225 \u4e0a\u6d77\u6d66\u4e1c\u56fd\u9645\u673a\u573aPVG \u5173\u897f\u673a\u573aKIX",
+        "data": "593"
+    }, {
+        "value": "MU2800 \u65b0\u5343\u5c81\u673a\u573aCTS \u7984\u53e3\u56fd\u9645\u673a\u573aNKG",
+        "data": "592"
+    }, {
+        "value": "OZ1165 \u91d1\u6d66\u673a\u573aGMP \u5173\u897f\u673a\u573aKIX",
+        "data": "586"
+    }, {
+        "value": "MU2799 \u5357\u4eac\u7984\u53e3\u56fd\u9645\u673a\u573aNKG \u65b0\u5343\u5c81\u673a\u573aCTS",
+        "data": "580"
+    }, {
+        "value": "MM990 \u66fc\u8c37\u7d20\u4e07\u90a3\u666eBKK \u90a3\u9738\u673a\u573aOKA",
+        "data": "577"
+    }, {
+        "value": "SC8843 \u6606\u660e\u957f\u6c34\u56fd\u9645\u673a\u573aKMG \u5173\u897f\u673a\u573aKIX",
+        "data": "559"
+    }, {
+        "value": "MU8762 \u6210\u7530\u673a\u573aNRT \u4e0a\u6d77\u6d66\u4e1c\u673a\u573aPVG",
+        "data": "548"
+    }, {
+        "value": "MU8763 \u4e0a\u6d77\u6d66\u4e1c\u56fd\u9645\u673a\u573aPVG \u6210\u7530\u673a\u573aNRT",
+        "data": "547"
+    }, {
+        "value": "MU277 \u5317\u4eac\u9996\u90fd\u56fd\u9645\u673a\u573aPEK \u5173\u897f\u673a\u573aKIX",
+        "data": "544"
+    }, {
+        "value": "MM905 \u90a3\u9738\u673a\u573aOKA \u4ec1\u5ddd\u673a\u573aICN",
+        "data": "542"
+    }, {
+        "value": "MM906 \u4ec1\u5ddd\u673a\u573aICN \u90a3\u9738\u673a\u573aOKA",
+        "data": "541"
+    }, {
+        "value": "MU296 \u65b0\u6cfb\u673a\u573aKIJ \u4e0a\u6d77\u6d66\u4e1c\u673a\u573aPVG",
+        "data": "530"
+    }, {
+        "value": "MU295 \u4e0a\u6d77\u6d66\u4e1c\u56fd\u9645\u673a\u573aPVG \u65b0\u6cfb\u673a\u573aKIJ",
+        "data": "524"
+    }, {
+        "value": "MU2691 \u4e0a\u6d77\u6d66\u4e1c\u56fd\u9645\u673a\u573aPVG \u4e2d\u90e8\u673a\u573aNGO",
+        "data": "515"
+    }, {
+        "value": "MU2026 \u9759\u5188\u673a\u573aFSZ \u676d\u5dde\u8427\u5c71\u673a\u573aHGH",
+        "data": "510"
+    }, {
+        "value": "MU2025 \u676d\u5dde\u8427\u5c71\u56fd\u9645\u673a\u573aHGH \u9759\u5188\u673a\u573aFSZ",
+        "data": "509"
+    }, {
+        "value": "MM214 \u90a3\u9738\u673a\u573aOKA \u5173\u897f\u673a\u573aKIX",
+        "data": "503"
+    }, {
+        "value": "5J5038 \u5c3c\u8bfa\u4f0a\u963f\u594e\u8bfa\u56fd\u9645\u673a\u573aMNL \u4e2d\u90e8\u673a\u573aNGO",
+        "data": "500"
+    }, {
+        "value": "MM899 \u7fbd\u7530\u673a\u573aHND \u4e0a\u6d77\u6d66\u4e1c\u56fd\u9645\u673a\u573aPVG",
+        "data": "497"
+    }, {
+        "value": "MM898 \u4e0a\u6d77\u6d66\u4e1c\u56fd\u9645\u673a\u573aPVG \u7fbd\u7530\u673a\u573aHND",
+        "data": "496"
+    }, {
+        "value": "MU532 \u798f\u5188\u673a\u573aFUK \u6d66\u4e1c\u673a\u573aPVG",
+        "data": "492"
+    }, {
+        "value": "MU531 \u4e0a\u6d77\u6d66\u4e1c\u56fd\u9645\u673a\u573aPVG \u798f\u5188\u673a\u573aFUK",
+        "data": "491"
+    }, {
+        "value": "MM1079 \u7fbd\u7530\u673a\u573aHND \u4e0a\u6d77\u6d66\u4e1c\u673a\u573aPVG",
+        "data": "489"
+    }, {
+        "value": "MU292 \u4e2d\u90e8\u673a\u573aNGO \u4e0a\u6d77\u6d66\u4e1c\u673a\u573aPVG",
+        "data": "486"
+    }, {
+        "value": "MU291 \u4e0a\u6d77\u6d66\u4e1c\u56fd\u9645\u673a\u573aPVG \u4e2d\u90e8\u673a\u573aNGO",
+        "data": "485"
+    }, {
+        "value": "MU9815 \u4e0a\u6d77\u8679\u6865\u56fd\u9645\u673a\u573aSHA \u7fbd\u7530\u673a\u573aHND",
+        "data": "481"
+    }, {
+        "value": "MU5088 \u798f\u5188\u673a\u573aFUK \u4e0a\u6d77\u6d66\u4e1c\u56fd\u9645\u673a\u573aPVG",
+        "data": "477"
+    }, {
+        "value": "MU530 \u4e2d\u90e8\u673a\u573aNGO \u6d66\u4e1c\u673a\u573aPVG",
+        "data": "472"
+    }, {
+        "value": "MU529 \u4e0a\u6d77\u6d66\u4e1c\u56fd\u9645\u673a\u573aPVG \u4e2d\u90e8\u673a\u573aNGO",
+        "data": "470"
+    }, {
+        "value": "KE2710 \u7fbd\u7530\u673a\u573aHND \u91d1\u6d66\u673a\u573aGMP",
+        "data": "467"
+    }, {
+        "value": "MU557 \u4e0a\u6d77\u6d66\u4e1c\u56fd\u9645\u673a\u573aPVG \u5c0f\u677e\u673a\u573aKMQ",
+        "data": "465"
+    }, {
+        "value": "MU558 \u5c0f\u677e\u673a\u573aKMQ \u4e0a\u6d77\u6d66\u4e1c\u673a\u573aPVG",
+        "data": "464"
+    }, {
+        "value": "NH1167 \u7fbd\u7530\u673a\u573aHND \u91d1\u6d66\u673a\u573aGMP",
+        "data": "463"
+    }, {
+        "value": "MU522 \u6210\u7530\u673a\u573aNRT \u4e0a\u6d77\u6d66\u4e1c\u673a\u573aPVG",
+        "data": "461"
+    }, {
+        "value": "MU9815 \u4e0a\u6d77\u8679\u6865\u56fd\u9645\u673a\u573aSHA \u7fbd\u7530\u673a\u573aHND",
+        "data": "457"
+    }, {
+        "value": "MU9816 \u7fbd\u7530\u673a\u573aHND \u4e0a\u6d77\u8679\u6865\u673a\u573aSHA",
+        "data": "456"
+    }, {
+        "value": "MU521 \u4e0a\u6d77\u6d66\u4e1c\u56fd\u9645\u673a\u573aPVG \u6210\u7530\u673a\u573aNRT",
+        "data": "443"
+    }, {
+        "value": "MU523 \u4e0a\u6d77\u6d66\u4e1c\u56fd\u9645\u673a\u573aPVG \u6210\u7530\u673a\u573aNRT",
+        "data": "442"
+    }, {
+        "value": "MU524 \u6210\u7530\u673a\u573aNRT \u4e0a\u6d77\u6d66\u4e1c\u673a\u573aPVG",
+        "data": "441"
+    }, {
+        "value": "MU271 \u4e0a\u6d77\u6d66\u4e1c\u56fd\u9645\u673a\u573aPVG \u6210\u7530\u673a\u573aNRT",
+        "data": "440"
+    }, {
+        "value": "MU272 \u6210\u7530\u673a\u573aNRT \u4e0a\u6d77\u6d66\u4e1c\u673a\u573aPVG",
+        "data": "439"
+    }, {
+        "value": "MU537 \u4e0a\u6d77\u8679\u6865\u56fd\u9645\u673a\u573aSHA \u7fbd\u7530\u673a\u573aHND",
+        "data": "438"
+    }, {
+        "value": "MU538 \u7fbd\u7530\u673a\u573aHND \u4e0a\u6d77\u8679\u6865\u673a\u573aSHA",
+        "data": "437"
+    }, {
+        "value": "MU8732 \u7fbd\u7530\u673a\u573aHND \u4e0a\u6d77\u8679\u6865\u673a\u573aSHA",
+        "data": "436"
+    }, {
+        "value": "MU539 \u4e0a\u6d77\u6d66\u4e1c\u56fd\u9645\u673a\u573aPVG \u7fbd\u7530\u673a\u573aHND",
+        "data": "431"
+    }, {
+        "value": "MU540 \u7fbd\u7530\u673a\u573aHND \u4e0a\u6d77\u6d66\u4e1c\u673a\u573aPVG",
+        "data": "430"
+    }, {
+        "value": "MU575 \u4e0a\u6d77\u6d66\u4e1c\u56fd\u9645\u673a\u573aPVG \u7fbd\u7530\u673a\u573aHND",
+        "data": "429"
+    }, {
+        "value": "MU576 \u7fbd\u7530\u673a\u573aHND \u4e0a\u6d77\u6d66\u4e1c\u673a\u573aPVG",
+        "data": "428"
+    }, {
+        "value": "FM815 \u4e0a\u6d77\u8679\u6865\u56fd\u9645\u673a\u573aSHA \u7fbd\u7530\u673a\u573aHND",
+        "data": "413"
+    }, {
+        "value": "FM816 \u7fbd\u7530\u673a\u573aHND \u4e0a\u6d77\u8679\u6865\u673a\u573aSHA",
+        "data": "412"
+    }, {
+        "value": "FM538 \u7fbd\u7530\u673a\u573aHND \u4e0a\u6d77\u8679\u6865\u673a\u573aSHA",
+        "data": "411"
+    }, {
+        "value": "FM835 \u4e0a\u6d77\u6d66\u4e1c\u56fd\u9645\u673a\u573aPVG \u7fbd\u7530\u673a\u573aHND",
+        "data": "410"
+    }, {
+        "value": "FM836 \u7fbd\u7530\u673a\u573aHND \u4e0a\u6d77\u6d66\u4e1c\u673a\u573aPVG",
+        "data": "409"
+    }, {
+        "value": "MU775 \u5357\u4eac\u7984\u53e3\u56fd\u9645\u673a\u573aNKG \u6210\u7530\u673a\u573aNRT",
+        "data": "408"
+    }, {
+        "value": "MU8726 \u6210\u7530\u673a\u573aNRT \u4e0a\u6d77\u6d66\u4e1c\u673a\u573aPVG",
+        "data": "397"
+    }, {
+        "value": "MU729 \u4e0a\u6d77\u6d66\u4e1c\u56fd\u9645\u673a\u573aPVG \u5173\u897f\u673a\u573aKIX",
+        "data": "392"
+    }, {
+        "value": "MU515 \u4e0a\u6d77\u6d66\u4e1c\u56fd\u9645\u673a\u573aPVG \u5173\u897f\u673a\u573aKIX",
+        "data": "391"
+    }, {
+        "value": "MU516 \u5173\u897f\u673a\u573aKIX \u4e0a\u6d77\u6d66\u4e1c\u673a\u573aPVG",
+        "data": "390"
+    }, {
+        "value": "MU747 \u4e0a\u6d77\u6d66\u4e1c\u56fd\u9645\u673a\u573aPVG \u5173\u897f\u673a\u573aKIX",
+        "data": "389"
+    }, {
+        "value": "MU748 \u5173\u897f\u673a\u573aKIX \u4e0a\u6d77\u6d66\u4e1c\u673a\u573aPVG",
+        "data": "388"
+    }, {
+        "value": "MU225 \u4e0a\u6d77\u6d66\u4e1c\u56fd\u9645\u673a\u573aPVG \u5173\u897f\u673a\u573aKIX",
+        "data": "387"
+    }, {
+        "value": "MU226 \u5173\u897f\u673a\u573aKIX \u4e0a\u6d77\u6d66\u4e1c\u673a\u573aPVG",
+        "data": "386"
+    }, {
+        "value": "FM821 \u4e0a\u6d77\u6d66\u4e1c\u56fd\u9645\u673a\u573aPVG \u5173\u897f\u673a\u573aKIX",
+        "data": "381"
+    }, {
+        "value": "FM822 \u5173\u897f\u673a\u573aKIX \u4e0a\u6d77\u6d66\u4e1c\u673a\u573aPVG",
+        "data": "380"
+    }, {
+        "value": "MU9821 \u4e0a\u6d77\u6d66\u4e1c\u56fd\u9645\u673a\u573aPVG \u5173\u897f\u673a\u573aKIX",
+        "data": "371"
+    }, {
+        "value": "MU9822 \u5173\u897f\u673a\u573aKIX \u4e0a\u6d77\u6d66\u4e1c\u673a\u573aPVG",
+        "data": "370"
+    }, {
+        "value": "MU730 \u5173\u897f\u673a\u573aKIX \u4e0a\u6d77\u6d66\u4e1c\u673a\u573aPVG",
+        "data": "369"
+    }, {
+        "value": "MU517 \u4e0a\u6d77\u6d66\u4e1c\u56fd\u9645\u673a\u573aPVG \u798f\u5188\u673a\u573aFUK",
+        "data": "353"
+    }, {
+        "value": "MU518 \u798f\u5188\u673a\u573aFUK \u4e0a\u6d77\u6d66\u4e1c\u673a\u573aPVG",
+        "data": "352"
+    }, {
+        "value": "MU287 \u4e0a\u6d77\u6d66\u4e1c\u56fd\u9645\u673a\u573aPVG \u90a3\u9738\u673a\u573aOKA",
+        "data": "347"
+    }, {
+        "value": "MU288 \u90a3\u9738\u673a\u573aOKA \u4e0a\u6d77\u6d66\u4e1c\u673a\u573aPVG",
+        "data": "346"
+    }, {
+        "value": "MU2085 \u4e0a\u6d77\u6d66\u4e1c\u56fd\u9645\u673a\u573aPVG \u90a3\u9738\u673a\u573aOKA",
+        "data": "344"
+    }, {
+        "value": "MU2086 \u90a3\u9738\u673a\u573aOKA \u4e0a\u6d77\u6d66\u4e1c\u673a\u573aPVG",
+        "data": "343"
+    }, {
+        "value": "MU7219 \u4e0a\u6d77\u6d66\u4e1c\u56fd\u9645\u673a\u573aPVG \u90a3\u9738\u673a\u573aOKA",
+        "data": "342"
+    }, {
+        "value": "MU7220 \u90a3\u9738\u673a\u573aOKA \u4e0a\u6d77\u6d66\u4e1c\u673a\u573aPVG",
+        "data": "341"
+    }, {
+        "value": "MU2063 \u676d\u5dde\u8427\u5c71\u56fd\u9645\u673a\u573aHGH \u90a3\u9738\u673a\u573aOKA",
+        "data": "340"
+    }, {
+        "value": "MU2064 \u90a3\u9738\u673a\u573aOKA \u676d\u5dde\u8427\u5c71\u673a\u573aHGH",
+        "data": "339"
+    }, {
+        "value": "MU7105 \u4e0a\u6d77\u6d66\u4e1c\u56fd\u9645\u673a\u573aPVG \u90a3\u9738\u673a\u573aOKA",
+        "data": "335"
+    }, {
+        "value": "MU7106 \u90a3\u9738\u673a\u573aOKA \u4e0a\u6d77\u6d66\u4e1c\u673a\u573aPVG",
+        "data": "334"
+    }, {
+        "value": "MU279 \u4e0a\u6d77\u6d66\u4e1c\u56fd\u9645\u673a\u573aPVG \u65b0\u5343\u5c81\u673a\u573aCTS",
+        "data": "330"
+    }, {
+        "value": "MU280 \u65b0\u5343\u5c81\u673a\u573aCTS \u4e0a\u6d77\u6d66\u4e1c\u673a\u573aPVG",
+        "data": "329"
+    }, {
+        "value": "MU2692 \u4e2d\u90e8\u673a\u573aNGO \u4e0a\u6d77\u6d66\u4e1c\u673a\u573aPVG",
+        "data": "318"
+    }, {
+        "value": "MU719 \u4e0a\u6d77\u6d66\u4e1c\u56fd\u9645\u673a\u573aPVG \u4e2d\u90e8\u673a\u573aNGO",
+        "data": "309"
+    }, {
+        "value": "MU720 \u4e2d\u90e8\u673a\u573aNGO \u4e0a\u6d77\u6d66\u4e1c\u673a\u573aPVG",
+        "data": "308"
+    }, {
+        "value": "MU527 \u4e0a\u6d77\u6d66\u4e1c\u56fd\u9645\u673a\u573aPVG \u5188\u5c71\u673a\u573aOKJ",
+        "data": "301"
+    }, {
+        "value": "MU528 \u5188\u5c71\u673a\u573aOKJ \u4e0a\u6d77\u6d66\u4e1c\u673a\u573aPVG",
+        "data": "300"
+    }, {
+        "value": "MU293 \u4e0a\u6d77\u6d66\u4e1c\u56fd\u9645\u673a\u573aPVG \u5e7f\u5c9b\u673a\u573aHIJ",
+        "data": "299"
+    }, {
+        "value": "MU294 \u5e7f\u5c9b\u673a\u573aHIJ \u4e0a\u6d77\u6d66\u4e1c\u673a\u573aPVG",
+        "data": "298"
+    }, {
+        "value": "MU5087 \u4e0a\u6d77\u6d66\u4e1c\u56fd\u9645\u673a\u573aPVG \u798f\u5188\u673a\u573aFUK",
+        "data": "297"
+    }, {
+        "value": "MU7015 \u4e0a\u6d77\u6d66\u4e1c\u56fd\u9645\u673a\u573aPVG \u9759\u5188\u673a\u573aFSZ",
+        "data": "294"
+    }, {
+        "value": "MU7016 \u9759\u5188\u673a\u573aFSZ \u4e0a\u6d77\u6d66\u4e1c\u673a\u573aPVG",
+        "data": "293"
+    }, {
+        "value": "MU2019 \u4e0a\u6d77\u6d66\u4e1c\u56fd\u9645\u673a\u573aPVG \u9759\u5188\u673a\u573aFSZ",
+        "data": "292"
+    }, {
+        "value": "MU761 \u4e0a\u6d77\u6d66\u4e1c\u56fd\u9645\u673a\u573aPVG \u9e7f\u513f\u5c9b\u673a\u573aKOJ",
+        "data": "289"
+    }, {
+        "value": "MU762 \u9e7f\u513f\u5c9b\u673a\u573aKOJ \u4e0a\u6d77\u6d66\u4e1c\u673a\u573aPVG",
+        "data": "288"
+    }, {
+        "value": "MU2020 \u9759\u5188\u673a\u573aFSZ \u4e0a\u6d77\u6d66\u4e1c\u673a\u573aPVG",
+        "data": "286"
+    }, {
+        "value": "MU2871 \u5357\u4eac\u7984\u53e3\u56fd\u9645\u673a\u573aNKG \u9759\u5188\u673a\u573aFSZ",
+        "data": "283"
+    }, {
+        "value": "MU2872 \u9759\u5188\u673a\u573aFSZ \u5357\u4eac\u7984\u53e3\u673a\u573aNKG",
+        "data": "282"
+    }, {
+        "value": "MU519 \u4e0a\u6d77\u6d66\u4e1c\u56fd\u9645\u673a\u573aPVG \u957f\u5d0e\u673a\u573aNGS",
+        "data": "275"
+    }, {
+        "value": "MU520 \u957f\u5d0e\u673a\u573aNGS \u4e0a\u6d77\u6d66\u4e1c\u673a\u573aPVG",
+        "data": "274"
+    }, {
+        "value": "MU275 \u4e0a\u6d77\u6d66\u4e1c\u56fd\u9645\u673a\u573aPVG \u677e\u5c71\u673a\u573aMYJ",
+        "data": "258"
+    }, {
+        "value": "MU276 \u677e\u5c71\u673a\u573aMYJ \u4e0a\u6d77\u6d66\u4e1c\u673a\u573aPVG",
+        "data": "257"
+    }, {
+        "value": "MM063 \u5173\u897f\u673a\u573aKIX \u9999\u6e2f\u673a\u573aHKG",
+        "data": "246"
+    }, {
+        "value": "OZ1035 \u7fbd\u7530\u673a\u573aHND \u91d1\u6d66\u673a\u573aGMP",
+        "data": "238"
+    }, {
+        "value": "MU283 \u4e0a\u6d77\u6d66\u4e1c\u56fd\u9645\u673a\u573aPVG \u65ed\u5ddd\u673a\u573aAKJ",
+        "data": "234"
+    }, {
+        "value": "MU284 \u65ed\u5ddd\u673a\u573aAKJ \u4e0a\u6d77\u6d66\u4e1c\u673a\u573aPVG",
+        "data": "233"
+    }, {
+        "value": "MM063 \u5173\u897f\u673a\u573aKIX \u9999\u6e2f\u673a\u573aHKG",
+        "data": "224"
+    }, {
+        "value": "OZ1035 \u7fbd\u7530\u673a\u573aHND \u91d1\u6d66\u673a\u573aGMP",
+        "data": "216"
+    }, {
+        "value": "MU283 \u4e0a\u6d77\u6d66\u4e1c\u56fd\u9645\u673a\u573aPVG \u65ed\u5ddd\u673a\u573aAKJ",
+        "data": "212"
+    }, {
+        "value": "MU284 \u65ed\u5ddd\u673a\u573aAKJ \u4e0a\u6d77\u6d66\u4e1c\u673a\u573aPVG",
+        "data": "211"
+    }, {
+        "value": "MU2859 \u5357\u4eac\u7984\u53e3\u56fd\u9645\u673a\u573aNKG \u5173\u897f\u673a\u573aKIX",
+        "data": "209"
+    }, {
+        "value": "MU2860 \u5173\u897f\u673a\u573aKIX \u5357\u4eac\u7984\u53e3\u673a\u573aNKG",
+        "data": "208"
+    }, {
+        "value": "MU776 \u6210\u7530\u673a\u573aNRT \u5357\u4eac\u7984\u53e3\u673a\u573aNKG",
+        "data": "207"
+    }, {
+        "value": "MM006 \u4ec1\u5ddd\u673a\u573aICN \u5173\u897f\u673a\u573aKIX",
+        "data": "193"
+    }, {
+        "value": "FM825 \u4e0a\u6d77\u6d66\u4e1c\u56fd\u9645\u673a\u573aPVG \u5bcc\u5c71\u673a\u573aTOY",
+        "data": "192"
+    }, {
+        "value": "FM826 \u5bcc\u5c71\u673a\u573aTOY \u4e0a\u6d77\u6d66\u4e1c\u673a\u573aPVG",
+        "data": "191"
+    }, {
+        "value": "MU749 \u5317\u4eac\u9996\u90fd\u56fd\u9645\u673a\u573aPEK \u65ed\u5ddd\u673a\u573aAKJ",
+        "data": "186"
+    }, {
+        "value": "MU750 \u65ed\u5ddd\u673a\u573aAKJ \u5317\u4eac\u9996\u90fd\u673a\u573aPEK",
+        "data": "185"
+    }, {
+        "value": "MU2097 \u5b81\u6ce2\u680e\u793e\u673a\u573aNGB \u5173\u897f\u673a\u573aKIX",
+        "data": "184"
+    }, {
+        "value": "MU2098 \u5173\u897f\u673a\u573aKIX \u5b81\u6ce2\u680e\u793e\u673a\u573aNGB",
+        "data": "183"
+    }, {
+        "value": "MU2879 \u5357\u4eac\u7984\u53e3\u56fd\u9645\u673a\u573aNKG \u798f\u5188\u673a\u573aFUK",
+        "data": "177"
+    }, {
+        "value": "MU2880 \u798f\u5188\u673a\u573aFUK \u5357\u4eac\u7984\u53e3\u673a\u573aNKG",
+        "data": "176"
+    }, {
+        "value": "MU535 \u5317\u4eac\u9996\u90fd\u56fd\u9645\u673a\u573aPEK \u798f\u5188\u673a\u573aFUK",
+        "data": "175"
+    }, {
+        "value": "MU536 \u798f\u5188\u673a\u573aFUK \u5317\u4eac\u9996\u90fd\u673a\u573aPEK",
+        "data": "174"
+    }, {
+        "value": "XJ600 \u66fc\u8c37\u5eca\u66fc\u673a\u573aDMK \u6210\u7530\u673a\u573aNRT",
+        "data": "169"
+    }, {
+        "value": "MU2099 \u676d\u5dde\u8427\u5c71\u56fd\u9645\u673a\u573aHGH \u51fd\u9986\u673a\u573aHKD",
+        "data": "159"
+    }, {
+        "value": "MU2100 \u51fd\u9986\u673a\u573aHKD \u676d\u5dde\u8427\u5c71\u673a\u573aHGH",
+        "data": "158"
+    }, {
+        "value": "MU2051 \u676d\u5dde\u8427\u5c71\u56fd\u9645\u673a\u573aHGH \u5173\u897f\u673a\u573aKIX",
+        "data": "155"
+    }, {
+        "value": "MU2052 \u5173\u897f\u673a\u573aKIX \u676d\u5dde\u8427\u5c71\u673a\u573aHGH",
+        "data": "154"
+    }, {
+        "value": "MF809 \u798f\u5dde\u957f\u4e50\u56fd\u9645\u673a\u573aFOC \u6210\u7530\u673a\u573aNRT",
+        "data": "151"
+    }, {
+        "value": "MU8705 \u4e0a\u6d77\u6d66\u4e1c\u56fd\u9645\u673a\u573aPVG \u6210\u7530\u673a\u573aNRT",
+        "data": "142"
+    }, {
+        "value": "MU9825 \u4e0a\u6d77\u6d66\u4e1c\u56fd\u9645\u673a\u573aPVG \u5bcc\u5c71\u673a\u573aTOY",
+        "data": "126"
+    }, {
+        "value": "MU9826 \u5bcc\u5c71\u673a\u573aTOY \u4e0a\u6d77\u6d66\u4e1c\u673a\u573aPVG",
+        "data": "125"
+    }, {
+        "value": "MM964 \u9999\u6e2f\u673a\u573aHKG \u90a3\u9738\u673a\u573aOKA",
+        "data": "108"
+    }, {
+        "value": "MM965 \u90a3\u9738\u673a\u573aOKA \u9999\u6e2f\u673a\u573aHKG",
+        "data": "107"
+    }, {
+        "value": "MU525 \u5317\u4eac\u9996\u90fd\u56fd\u9645\u673a\u573aPEK \u5173\u897f\u673a\u573aKIX",
+        "data": "101"
+    }, {
+        "value": "MU278 \u5173\u897f\u673a\u573aKIX \u5317\u4eac\u9996\u90fd\u673a\u573aPEK",
+        "data": "100"
+    }, {
+        "value": "MU2060 \u5173\u897f\u673a\u573aKIX \u9752\u5c9b\u6d41\u4ead\u673a\u573aTAO",
+        "data": "95"
+    }, {
+        "value": "TZ291 \u6210\u7530\u673a\u573aNRT \u6cf0\u56fd\u5eca\u66fc\u673a\u573aDMK",
+        "data": "80"
+    }, {
+        "value": "MU2090 \u9759\u5188\u673a\u573aFSZ \u5b81\u6ce2\u680e\u793e\u673a\u573aNGB",
+        "data": "57"
+    }, {
+        "value": "MU5019 \u6e29\u5dde\u9f99\u6e7e\u56fd\u9645\u673a\u573aWNZ \u5173\u897f\u673a\u573aKIX",
+        "data": "54"
+    }, {
+        "value": "MU5020 \u5173\u897f\u673a\u573aKIX \u6e29\u5dde\u9f99\u6e7e\u673a\u573aWNZ",
+        "data": "53"
+    }, {
+        "value": "MU2089 \u5b81\u6ce2\u680e\u793e\u673a\u573aNGB \u9759\u5188\u673a\u573aFSZ",
+        "data": "45"
+    }, {
+        "value": "MM905 \u90a3\u9738\u673a\u573aOKA \u4ec1\u5ddd\u673a\u573aICN",
+        "data": "38"
+    }, {
+        "value": "MU2059 \u9752\u5c9b\u6d41\u4ead\u56fd\u9645\u673a\u573aTAO \u5173\u897f\u673a\u573aKIX",
+        "data": "37"
+    }, {
+        "value": "MU5027 \u5408\u80a5\u65b0\u6865\u56fd\u9645\u673a\u573aHFE \u4e2d\u90e8\u673a\u573aNGO",
+        "data": "34"
+    }, {
+        "value": "MU5028 \u4e2d\u90e8\u673a\u573aNGO \u5408\u80a5\u65b0\u6865\u673a\u573aHFE",
+        "data": "33"
+    }, {
+        "value": "MF835 \u798f\u5dde\u957f\u4e50\u56fd\u9645\u673a\u573aFOC \u5173\u897f\u673a\u573aKIX",
+        "data": "31"
+    }, {
+        "value": "MU8765 \u4e0a\u6d77\u6d66\u4e1c\u56fd\u9645\u673a\u573aPVG \u4e2d\u90e8\u673a\u573aNGO",
+        "data": "21"
+    }, {
+        "value": "MU8766 \u4e2d\u90e8\u673a\u573aNGO \u4e0a\u6d77\u6d66\u4e1c\u673a\u573aPVG",
+        "data": "20"
+    }, {
+        "value": "MF839 \u53a6\u95e8\u9ad8\u5d0e\u56fd\u9645\u673a\u573aXMN \u5173\u897f\u673a\u573aKIX",
+        "data": "16"
+    }, {
+        "value": "MM080 \u4e0a\u6d77\u6d66\u4e1c\u56fd\u9645\u673a\u573aPVG \u5173\u897f\u673a\u573aKIX",
+        "data": "13"
+    }, {
+        "value": "MM079 \u5173\u897f\u673a\u573aKIX \u4e0a\u6d77\u6d66\u4e1c\u673a\u573aPVG",
+        "data": "12"
+    }, {
+        "value": "MM922 \u53f0\u5317\u6843\u56ed\u673a\u573aTPE \u90a3\u9738\u673a\u573aOKA",
+        "data": "11"
+    }, {
+        "value": "MM1078 \u4e0a\u6d77\u6d66\u4e1c\u56fd\u9645\u673a\u573aPVG \u7fbd\u7530\u673a\u573aHND",
+        "data": "6"
+    }, {
+        "value": "FM747 \u4e0a\u6d77\u6d66\u4e1c\u56fd\u9645\u673a\u573aPVG \u5173\u897f\u673a\u573aKIX",
+        "data": "5"
+    }, {
+        "value": "FM748 \u5173\u897f\u673a\u573aKIX \u4e0a\u6d77\u6d66\u4e1c\u673a\u573aPVG",
+        "data": "4"
+    }]
+}
