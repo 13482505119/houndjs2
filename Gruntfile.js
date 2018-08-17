@@ -56,12 +56,17 @@ module.exports = function(grunt) {
                         'src/js/hound.js'
                     ],
                     'dist/css/hound.css': [
+                        'node_modules/bootstrap/dist/css/bootstrap.css',
+                        'node_modules/font-awesome/css/font-awesome.css',
+                        'src/css/hound.css'
+                    ],
+                    'dist/css/hound.admin.css': [
                         'node_modules/vali-admin/docs/css/main.css',
                         'node_modules/font-awesome/css/font-awesome.css',
                         'src/css/hound.css'
                     ],
                     'dist/css/hound.mobile.css': [
-                        'node_modules/vali-admin/docs/css/main.css',
+                        'node_modules/bootstrap/dist/css/bootstrap.css',
                         'node_modules/font-awesome/css/font-awesome.css',
                         'node_modules/swiper/dist/css/swiper.min.css',
                         'src/css/hound.css'
@@ -123,6 +128,9 @@ module.exports = function(grunt) {
                 files: {
                     'dist/css/hound.min.css': [
                         'dist/css/hound.css'
+                    ],
+                    'dist/css/hound.admin.min.css': [
+                        'dist/css/hound.admin.css'
                     ],
                     'dist/css/hound.mobile.min.css': [
                         'dist/css/hound.mobile.css'
