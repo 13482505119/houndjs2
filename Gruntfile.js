@@ -68,7 +68,7 @@ module.exports = function(grunt) {
                     'dist/css/hound.mobile.css': [
                         'node_modules/bootstrap/dist/css/bootstrap.css',
                         'node_modules/font-awesome/css/font-awesome.css',
-                        'node_modules/swiper/dist/css/swiper.min.css',
+                        'node_modules/swiper/dist/css/swiper.css',
                         'src/css/hound.css'
                     ]
                 }
@@ -110,7 +110,13 @@ module.exports = function(grunt) {
         },
         autoprefixer: {
             options: {
-                browsers: ['last 1 version']
+                // browsers: ['last 1 version']
+                browserslist: [
+                    "iOS >= 7",
+                    "Android > 4.1",
+                    "Firefox > 20",
+                    "last 2 versions"
+                ]
             },
             dist: {
                 files: [
