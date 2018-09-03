@@ -16,10 +16,10 @@ define(['hound', 'pullLoad'], function(hound, pullLoad) {
     //$('#closed').triggerHandler('closed');
     $('#closed').trigger('closed');
 
-    hound.notify('标题', '消息');
-    hound.notify('标题', '消息', 'success');
-    hound.notify('标题', '消息', 'warning');
-    hound.notify('标题', '消息', 'danger');
+    // hound.notify('标题', '消息');
+    // hound.notify('标题', '消息', 'success');
+    // hound.notify('标题', '消息', 'warning');
+    // hound.notify('标题', '消息', 'danger');
 
     var countries = [
         { value: 'Andorra', data: 'AD' },
@@ -79,4 +79,17 @@ define(['hound', 'pullLoad'], function(hound, pullLoad) {
     //        }, 5000);
     //    }
     //});
+
+    var myIScroll = pullLoad(".pull-wrapper", {
+        pullDownAction: function () {
+            setTimeout(function () {
+                myIScroll.refresh();
+            }, 3000);
+        },
+        pullUpAction: function () {
+            setTimeout(function () {
+                myIScroll.refresh();
+            }, 3000);
+        }
+    });
 });
